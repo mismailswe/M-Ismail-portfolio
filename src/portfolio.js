@@ -30,7 +30,7 @@ import bootstrap from "./assets/images/bootstrap.svg";
 import git from "./assets/images/git.svg";
 import docker from "./assets/images/docker.svg";
 import aws from "./assets/images/aws.svg";
-import heroku from "./assets/images/heroku.svg";
+import azure from "./assets/images/azure.svg";
 import figma from "./assets/images/figmaicon.svg";
 
 import linux from "./assets/images/linux.svg";
@@ -182,16 +182,16 @@ https://fontawesome.com/icons?d=gallery */
       src: aws
     },
     {
+      skillName: "Azure",
+      src: azure
+    },
+    {
       skillName: "GCP",
       src: gcp
     },
     {
       skillName: "Hostinger",
       src: hostinger
-    },
-    {
-      skillName: "Heroku",
-      src: heroku
     },
     {
       skillName: "Linux",
@@ -549,7 +549,7 @@ const contactInfo = {
   title: <Emoji text="Contact Me ☎️" />,
   subtitle:
     "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+92-3029463719",
+  number: "+923029463719",
   email_address: "m.ismail.swe@gmail.com"
 };
 

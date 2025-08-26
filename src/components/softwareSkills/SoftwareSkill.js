@@ -16,9 +16,7 @@ export default function SoftwareSkill() {
     "Tools & Others": skillsByCategory["Tools & Others"] || []
   };
 
-  const dataScienceSkills = {
-    "Data Science & ML": skillsByCategory["Data Science & ML"] || []
-  };
+  const dataScienceSkills = skillsByCategory["Data Science & ML"] || {};
 
   const currentSkills =
     activeCategory === "software" ? softwareSkills : dataScienceSkills;

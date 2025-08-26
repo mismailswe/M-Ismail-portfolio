@@ -282,6 +282,18 @@ https://fontawesome.com/icons?d=gallery */
         {
           skillName: "Jupyter",
           src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"
+        },
+        {
+          skillName: "Microsoft Excel",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg"
+        },
+        {
+          skillName: "BeautifulSoup",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        },
+        {
+          skillName: "Scrapy",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
         }
       ],
       "Data Visualization": [
@@ -296,12 +308,56 @@ https://fontawesome.com/icons?d=gallery */
         {
           skillName: "Tableau",
           src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tableau/tableau-original.svg"
+        },
+        {
+          skillName: "Power BI",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg"
         }
       ],
       "Computer Vision": [
         {
           skillName: "OpenCV",
           src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
+        },
+        {
+          skillName: "OCR",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        }
+      ],
+      "AI & APIs": [
+        {
+          skillName: "OpenAI API",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg"
+        },
+        {
+          skillName: "Hugging Face",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/huggingface/huggingface-original.svg"
+        },
+        {
+          skillName: "LangChain",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        },
+        {
+          skillName: "Streamlit",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg"
+        }
+      ],
+      "Big Data & Cloud": [
+        {
+          skillName: "Apache Spark",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"
+        },
+        {
+          skillName: "Hadoop",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hadoop/hadoop-original.svg"
+        },
+        {
+          skillName: "AWS SageMaker",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
+        },
+        {
+          skillName: "Google Colab",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
         }
       ]
     }

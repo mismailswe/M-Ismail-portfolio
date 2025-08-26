@@ -46,7 +46,7 @@ const greeting = {
   username: "Muhammad Ismail",
   title: "Hi all, I'm Ismail",
   subTitle: (
-    <Emoji text="As a passionate Full Stack Software Engineer 🚀 with over four years of experience in the MERN stack and Nextjs technology, I am dedicated to bringing my passion and expertise to every project I work on." />
+    <Emoji text="A dynamic Full Stack Software Engineer with proven expertise in DevOps and Data Science/AI. I specialize in designing and delivering robust systems that integrate modern software development with intelligent, data-driven innovation" />
   ),
   resumeLink:
     "https://drive.google.com/drive/folders/1xZ5FCYhLX81S8znQ8AouZWX42naGQsjc?usp=sharing",

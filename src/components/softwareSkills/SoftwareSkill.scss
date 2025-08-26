@@ -1,31 +1,374 @@
 @import "../../_globalColor";
 
-.dev-icons {
-  padding-left: 0;
-  list-style: none;
-  font-size: 3rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  text-align: center;
+/* Toggle Buttons Styling */
+.skills-toggle-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, $skillsColor, $buttonColor);
+    border-radius: 2px;
+    opacity: 0.6;
+  }
 }
 
-.software-skill-inline {
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  background: linear-gradient(135deg, $lightBackground2, $lightBackground3);
+  color: $subTitle;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: $lightBoxShadow 0px 4px 15px -5px;
+  position: relative;
+  overflow: hidden;
+  min-width: 180px;
+  justify-content: center;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    transition: left 0.5s ease;
+  }
+
+  &:hover:not(:disabled)::before {
+    left: 100%;
+  }
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: $lightBoxShadowDark 0px 8px 25px -8px;
+    color: $skillsColor;
+  }
+
+  &.active {
+    background: linear-gradient(135deg, $skillsColor, $buttonColor);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0px 8px 25px rgba(100, 91, 235, 0.4);
+    transform: translateY(-2px);
+    animation: activePulse 2s ease-in-out infinite;
+
+    .toggle-icon {
+      transform: scale(1.1);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 3px;
+      background: linear-gradient(90deg, $skillsColor, $buttonColor);
+      border-radius: 2px;
+      animation: slideIn 0.3s ease-out;
+    }
+  }
+
+  .toggle-icon {
+    font-size: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+}
+
+@keyframes activePulse {
+  0%,
+  100% {
+    box-shadow: 0px 8px 25px rgba(100, 91, 235, 0.4);
+  }
+  50% {
+    box-shadow: 0px 8px 25px rgba(100, 91, 235, 0.6);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 30px;
+    opacity: 1;
+  }
+}
+
+// Dark mode support for toggle buttons
+.dark-mode {
+  .toggle-btn {
+    background: linear-gradient(
+      135deg,
+      $darkBackground,
+      rgba(255, 255, 255, 0.05)
+    );
+    color: $textColorDark;
+    border-color: rgba(255, 255, 255, 0.1);
+
+    &:hover {
+      color: $skillsColor;
+      border-color: rgba(100, 91, 235, 0.3);
+    }
+
+    &.active {
+      background: linear-gradient(135deg, $skillsColor, $buttonColor);
+      color: white;
+      border-color: transparent;
+    }
+  }
+}
+
+// Responsive design for toggle buttons
+@media (max-width: 768px) {
+  .skills-toggle-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .toggle-btn {
+    min-width: 200px;
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .toggle-btn {
+    min-width: 160px;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+
+    .toggle-icon {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.software-skills-main-div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  animation: fadeInUp 0.6s ease-out;
+  transition: opacity 0.3s ease;
+
+  &.loading {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skill-category-card {
+  background-color: $lightBackground2;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: $lightBoxShadow 0px 8px 25px -12px;
+  border: 1px solid $lightBorder1;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, $skillsColor, $buttonColor);
+    border-radius: 16px 16px 0 0;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $lightBoxShadowDark 0px 20px 40px -15px;
+  }
+}
+
+.category-header {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.category-label {
   display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  background: linear-gradient(135deg, $skillsColor, $buttonColor);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(100, 91, 235, 0.3);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, $buttonColor, $skillsColor);
+    border-radius: 25px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
 }
 
-.software-skill-inline > i {
-  color: $subTitle;
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 1rem;
+  align-items: center;
 }
 
-.software-skill-inline > i:hover {
-  color: $skillsColor;
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 0.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(100, 91, 235, 0.08);
+    transform: scale(1.05);
+
+    .skill-icon {
+      transform: scale(1.1);
+    }
+
+    .skill-name {
+      color: $skillsColor;
+    }
+  }
 }
-.software-skill-inline > p {
+
+.skill-icon {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(100, 91, 235, 0.1),
+    rgba(139, 67, 206, 0.1)
+  );
+  transition: all 0.3s ease;
+
+  img {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: filter 0.3s ease;
+  }
+}
+
+.skill-name {
   color: $subTitle;
-  font-size: 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin: 0;
+  transition: color 0.3s ease;
+  line-height: 1.2;
 }
-.software-skill-inline > i:hover ~ p {
-  color: $skillsColor;
+
+// Dark mode support
+.dark-mode {
+  .skill-category-card {
+    background-color: $darkBackground;
+    border-color: rgba(255, 255, 255, 0.1);
+
+    &:hover {
+      box-shadow: $darkBoxShadow 0px 20px 40px -15px;
+    }
+  }
+
+  .skill-item:hover {
+    background-color: rgba(100, 91, 235, 0.15);
+  }
+
+  .skill-name {
+    color: $textColorDark;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .software-skills-main-div {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .skill-category-card {
+    padding: 1.25rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .skill-item {
+    padding: 0.75rem 0.25rem;
+  }
+
+  .skill-icon {
+    padding: 0.5rem;
+
+    img {
+      width: 32px !important;
+      height: 32px !important;
+    }
+  }
 }

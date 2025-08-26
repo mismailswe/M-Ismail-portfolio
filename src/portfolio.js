@@ -198,6 +198,114 @@ https://fontawesome.com/icons?d=gallery */
       src: linux
     }
   ],
+  // 🔹 Grouped by category
+  skillsByCategory: {
+    Frontend: [
+      {skillName: "JavaScript", src: javascript},
+      {skillName: "TypeScript", src: typescript},
+      {skillName: "React.js", src: reactjs},
+      {skillName: "Next.js", src: next},
+      {skillName: "Redux", src: redux},
+      {skillName: "React Native", src: reactnative},
+      // {skillName: "Angular", src: angular}, // added Angular
+      {skillName: "Material UI", src: materialui},
+      {skillName: "Tailwind", src: tailwind},
+      {skillName: "Bootstrap", src: bootstrap},
+      {skillName: "MaterializeCSS", src: materializecss}
+    ],
+    Backend: [
+      {skillName: "Node.js", src: node},
+      {skillName: "NestJS", src: nestjs},
+      {skillName: "Express.js", src: express}
+      // {skillName: "PHP", src: php}, // added PHP
+      // {skillName: "Laravel", src: laravel} // added Laravel
+    ],
+    Databases: [
+      {skillName: "SQL", src: sql},
+      {skillName: "MySQL", src: mysql},
+      {skillName: "PostgreSQL", src: postgresql},
+      {skillName: "MongoDB", src: mongodb},
+      {skillName: "GraphQL", src: graphql}
+    ],
+    "Cloud & Deployment": [
+      {skillName: "AWS", src: aws},
+      {skillName: "Azure", src: azure},
+      {skillName: "GCP", src: gcp},
+      {skillName: "Hostinger", src: hostinger},
+      {skillName: "Docker", src: docker},
+      {skillName: "Linux", src: linux}
+    ],
+    "Tools & Others": [
+      {skillName: "Git", src: git},
+      {skillName: "Postman", src: postman},
+      {skillName: "Firebase", src: firebase},
+      {skillName: "Figma", src: figma}
+    ],
+    "Data Science & ML": {
+      "Programming Languages": [
+        {
+          skillName: "Python",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        },
+        {
+          skillName: "R",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg"
+        }
+      ],
+      "Machine Learning": [
+        {
+          skillName: "TensorFlow",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+        },
+        {
+          skillName: "PyTorch",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+        },
+        {
+          skillName: "Scikit-learn",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikit-learn/scikit-learn-original.svg"
+        },
+        {
+          skillName: "Keras",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg"
+        }
+      ],
+      "Data Analysis": [
+        {
+          skillName: "Pandas",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
+        },
+        {
+          skillName: "NumPy",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
+        },
+        {
+          skillName: "Jupyter",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"
+        }
+      ],
+      "Data Visualization": [
+        {
+          skillName: "Matplotlib",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg"
+        },
+        {
+          skillName: "Seaborn",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/seaborn/seaborn-original.svg"
+        },
+        {
+          skillName: "Tableau",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tableau/tableau-original.svg"
+        }
+      ],
+      "Computer Vision": [
+        {
+          skillName: "OpenCV",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
+        }
+      ]
+    }
+  },
   display: true // Set false to hide this section, defaults to true
 };
 

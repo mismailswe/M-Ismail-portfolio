@@ -32,7 +32,7 @@
   border-radius: 50px;
   background: linear-gradient(135deg, $lightBackground2, $lightBackground3);
   color: $subTitle;
-  font-size: 0.875rem;
+  font-size: 0.99rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -69,17 +69,19 @@
   }
 
   &:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: $lightBoxShadowDark 0px 8px 25px -8px;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0px 12px 30px rgba(100, 91, 235, 0.25);
     color: $skillsColor;
+    background: #ffffff;
+    border-color: rgba(100, 91, 235, 0.3);
   }
 
   &.active {
-    background: linear-gradient(135deg, $skillsColor, $buttonColor);
+    background: linear-gradient(135deg, #645beb, #55198b);
     color: white;
     border-color: transparent;
     box-shadow: 0px 8px 25px rgba(100, 91, 235, 0.4);
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
     animation: activePulse 2s ease-in-out infinite;
 
     .toggle-icon {
@@ -94,7 +96,7 @@
       transform: translateX(-50%);
       width: 30px;
       height: 3px;
-      background: linear-gradient(90deg, $skillsColor, $buttonColor);
+      background: $buttonColor;
       border-radius: 2px;
       animation: slideIn 0.3s ease-out;
     }
@@ -103,6 +105,7 @@
   .toggle-icon {
     font-size: 1rem;
     transition: transform 0.3s ease;
+    filter: drop-shadow(0 0 8px rgba(100, 91, 235, 0.3));
   }
 }
 
@@ -110,9 +113,11 @@
   0%,
   100% {
     box-shadow: 0px 8px 25px rgba(100, 91, 235, 0.4);
+    transform: translateY(-3px) scale(1.02);
   }
   50% {
-    box-shadow: 0px 8px 25px rgba(100, 91, 235, 0.6);
+    box-shadow: 0px 12px 35px rgba(100, 91, 235, 0.6);
+    transform: translateY(-4px) scale(1.03);
   }
 }
 
@@ -266,7 +271,7 @@
   }
 
   &:hover::before {
-    opacity: 1;
+    // opacity: 1;
   }
 }
 
@@ -287,18 +292,18 @@
   padding: 0.75rem 0.25rem;
   border-radius: 10px;
   transition: all 0.3s ease;
-  cursor: pointer;
+  // cursor: pointer;
 
   &:hover {
-    background-color: rgba(100, 91, 235, 0.08);
-    transform: scale(1.03);
+    // background-color: rgba(100, 91, 235, 0.08);
+    // transform: scale(1.03);
 
     .skill-icon {
-      transform: scale(1.05);
+      // transform: scale(1.05);
     }
 
     .skill-name {
-      color: $skillsColor;
+      // color: $skillsColor;
     }
   }
 }

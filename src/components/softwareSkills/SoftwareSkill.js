@@ -35,24 +35,22 @@ export default function SoftwareSkill() {
     <div>
       {/* Toggle Buttons */}
       <div className="skills-toggle-container">
-                 <button
-           className={`toggle-btn ${
-             activeCategory === "software" ? "active" : ""
-           }`}
-           onClick={() => handleCategoryChange("software")}
-           disabled={isLoading}
-         >
-           <span className="toggle-icon">💻</span>
-           Development Skills
-         </button>
+        <button
+          className={`toggle-btn ${
+            activeCategory === "software" ? "active" : ""
+          }`}
+          onClick={() => handleCategoryChange("software")}
+        >
+          <span className="toggle-icon">💻</span>
+          Software Engineering
+        </button>
         <button
           className={`toggle-btn ${
             activeCategory === "dataScience" ? "active" : ""
           }`}
           onClick={() => handleCategoryChange("dataScience")}
-          disabled={isLoading}
         >
-          <span className="toggle-icon">🤖</span>
+          <span className="toggle-icon">📊</span>
           Data Science & ML
         </button>
       </div>

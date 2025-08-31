@@ -373,7 +373,7 @@ const educationInfo = {
       schoolName: "Riphah International University Islamabad",
       logo: require("./assets/images/Riphah-Logo.jpg"),
       subHeader: "Master of Science in Computer Software engineering",
-      duration: "June 2023 - Present",
+      duration: "04 Sep 2023 - 07 Jul 2025",
       desc: "Pursuing advanced studies in Software Engineering with a focus on cutting-edge technologies and research.",
       descBullets: [
         "In-depth exploration of advanced topics such as Software Architecture, Cloud Computing, DevOps, Natural Language Processing",
@@ -414,16 +414,24 @@ const techStack = {
   viewSkillBars: true, //Set it to true to show Proficiency Section
   experience: [
     {
-      Stack: "Frontend/Design", //Insert stack or technology you have experience in
-      progressPercentage: "93%" //Insert relative proficiency in percentage
+      Stack: "Frontend Development", //Insert stack or technology you have experience in
+      progressPercentage: "95%" //Insert relative proficiency in percentage
     },
     {
-      Stack: "Backend",
+      Stack: "Backend Development",
+      progressPercentage: "95%"
+    },
+    {
+      Stack: "Cloud & DevOps",
+      progressPercentage: "85%"
+    },
+    {
+      Stack: "Data Analysis & Visualization",
       progressPercentage: "80%"
     },
     {
-      Stack: "Programming",
-      progressPercentage: "80%"
+      Stack: "Machine Learning & AI",
+      progressPercentage: "70%"
     }
   ],
   displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false

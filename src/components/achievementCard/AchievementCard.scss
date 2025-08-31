@@ -19,19 +19,20 @@
 }
 .certificate-card {
   background-color: $lightBackground2;
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
   padding: 1.5rem;
   border-radius: 10px;
-  border: 1px solid $lightBorder1;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  box-shadow: $lightBoxShadow 0px 8px 25px -12px;
+  border: 1px solid $lightBorder1;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .certificate-detail-div {
   text-align: center;
 }
 .certificate-card:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+  transform: translateY(-8px);
+  box-shadow: $lightBoxShadowDark 0px 20px 40px -15px;
 }
 .dark-mode.certificate-card:hover {
   box-shadow: $achievementCertificateCardHoverDark 0px 20px 30px -10px;

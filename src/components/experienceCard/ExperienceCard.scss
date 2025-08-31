@@ -3,21 +3,29 @@
 .experience-card {
   position: relative;
   background-color: $lightBackground2;
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
   border-radius: 10px;
   border: 1px solid $lightBorder1;
+  box-shadow: $lightBoxShadow 0px 8px 25px -12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .experience-card-dark {
   position: relative;
   background-color: $darkBackground;
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
+
   border-radius: 10px;
   border: 1px solid $lightBorder1;
+  box-shadow: $lightBoxShadow 0px 8px 25px -12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.experience-card-dark:hover {
+  transform: translateY(-8px);
+  box-shadow: #d9dbdf 0px 20px 40px -15px;
+}
 .experience-card:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+  transform: translateY(-8px);
+  box-shadow: #d9dbdf 0px 20px 40px -15px;
 }
 
 .experience-banner {

@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   padding: 0 1rem;
   position: relative;
 
@@ -28,15 +28,15 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.25rem;
-  border: 2px solid transparent;
-  border-radius: 50px;
+  border: 1px solid transparent;
+  border-radius: 6px;
   background: linear-gradient(135deg, $lightBackground2, $lightBackground3);
   color: $subTitle;
-  font-size: 0.99rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: $lightBoxShadow 0px 4px 15px -5px;
+  // box-shadow: $lightBoxShadow 0px 4px 15px -5px;
   position: relative;
   overflow: hidden;
   min-width: 160px;
@@ -69,7 +69,6 @@
   }
 
   &:hover:not(:disabled) {
-    transform: translateY(-3px) scale(1.02);
     box-shadow: 0px 12px 30px rgba(100, 91, 235, 0.25);
     color: $skillsColor;
     background: #ffffff;
@@ -81,8 +80,7 @@
     color: white;
     border-color: transparent;
     box-shadow: 0px 8px 25px rgba(100, 91, 235, 0.4);
-    transform: translateY(-3px) scale(1.02);
-    animation: activePulse 2s ease-in-out infinite;
+    // animation: activePulse 2s ease-in-out infinite;
 
     .toggle-icon {
       transform: scale(1.1);
@@ -144,8 +142,9 @@
     border-color: rgba(255, 255, 255, 0.1);
 
     &:hover {
-      color: $skillsColor;
-      border-color: rgba(100, 91, 235, 0.3);
+      color: $skillsColor !important;
+      border-color: rgba(100, 91, 235, 0.3) !important;
+      background: white !important;
     }
 
     &.active {
@@ -210,7 +209,7 @@
 
 .skill-category-card {
   background-color: $lightBackground2;
-  border-radius: 16px;
+  border-radius: 10px;
   padding: 1.5rem;
   box-shadow: $lightBoxShadow 0px 8px 25px -12px;
   border: 1px solid $lightBorder1;
@@ -252,7 +251,7 @@
   border-radius: 25px;
   font-size: 0.875rem;
   font-weight: 600;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   letter-spacing: 0.5px;
   box-shadow: 0 4px 15px rgba(100, 91, 235, 0.3);
   position: relative;
@@ -347,9 +346,9 @@
     }
   }
 
-  .skill-item:hover {
-    background-color: rgba(100, 91, 235, 0.15);
-  }
+  // .skill-item:hover {
+  //   background-color: rgba(100, 91, 235, 0.15);
+  // }
 
   .skill-name {
     color: $textColorDark;

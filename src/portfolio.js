@@ -37,7 +37,25 @@ import linux from "./assets/images/linux.svg";
 import postgresql from "./assets/images/postgres.svg";
 import hostinger from "./assets/images/hostinger.svg";
 import gcp from "./assets/images/gcp.svg";
-
+import php from "./assets/images/php.svg";
+import laravel from "./assets/images/laravel.svg";
+import angular from "./assets/images/angular.svg";
+import django from "./assets/images/django.svg";
+import fastapi from "./assets/images/fastapi.svg";
+import swagger from "./assets/images/swagger.svg";
+import blockchain from "./assets/images/blockchain.svg";
+import excel from "./assets/images/excel.svg";
+import seaborn from "./assets/images/seaborn.svg";
+import tableau from "./assets/images/tableau.svg";
+import powerbi from "./assets/images/powerbi.svg";
+import scikitlearn from "./assets/images/scikit-learn.svg";
+import beautifulsoup from "./assets/images/beautifulsoup.webp";
+import scrapy from "./assets/images/scrapy.svg";
+import langchain from "./assets/images/Langchain.svg";
+import openai from "./assets/images/openai.svg";
+import ollama from "./assets/images/ollama.svg";
+import huggingface from "./assets/images/huggingface.svg";
+import ocr from "./assets/images/ocr.svg";
 const illustration = {
   animated: true // set to false to use static SVG
 };
@@ -71,13 +89,13 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "CRAZY FULL STACK DEVELOPER WHO IS WORKING IN DIFFERENT TECH",
   // subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE DIFFERENT TECH",
   skills: [
-    <Emoji text="⚡ Develop highly interactive Front end / User Interfaces for your web app" />,
-    <Emoji text="⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks" />,
-    <Emoji text="⚡ Develop highly relible and effecient back end for your web and mobile apps" />,
-    <Emoji text="⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean" />
+    <Emoji text="⚡ Build responsive and interactive user interfaces for web and mobile applications" />,
+    <Emoji text="⚡ Design and implement scalable backend systems and APIs" />,
+    <Emoji text="⚡ Work with relational, non-relational, and cloud databases for efficient data management" />,
+    <Emoji text="⚡ Deploy and manage applications using cloud platforms, containers, and CI/CD pipelines" />,
+    <Emoji text="⚡ Apply data science, machine learning, and AI techniques for intelligent solutions" />
   ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
@@ -204,10 +222,11 @@ https://fontawesome.com/icons?d=gallery */
       {skillName: "JavaScript", src: javascript},
       {skillName: "TypeScript", src: typescript},
       {skillName: "React.js", src: reactjs},
+      {skillName: "Angular", src: angular},
       {skillName: "Next.js", src: next},
       {skillName: "Redux", src: redux},
       {skillName: "React Native", src: reactnative},
-      // {skillName: "Angular", src: angular}, // added Angular
+
       {skillName: "Material UI", src: materialui},
       {skillName: "Tailwind", src: tailwind},
       {skillName: "Bootstrap", src: bootstrap},
@@ -216,16 +235,20 @@ https://fontawesome.com/icons?d=gallery */
     Backend: [
       {skillName: "Node.js", src: node},
       {skillName: "NestJS", src: nestjs},
-      {skillName: "Express.js", src: express}
-      // {skillName: "PHP", src: php}, // added PHP
-      // {skillName: "Laravel", src: laravel} // added Laravel
+      {skillName: "Express.js", src: express},
+      {skillName: "Django", src: django},
+      {skillName: "FastAPI", src: fastapi},
+      {skillName: "PHP", src: php},
+      {skillName: "Laravel", src: laravel},
+      {skillName: "Blockchain", src: blockchain}
     ],
     Databases: [
-      {skillName: "SQL", src: sql},
+      {skillName: "MongoDB", src: mongodb},
       {skillName: "MySQL", src: mysql},
       {skillName: "PostgreSQL", src: postgresql},
-      {skillName: "MongoDB", src: mongodb},
-      {skillName: "GraphQL", src: graphql}
+      {skillName: "SQL", src: sql},
+      {skillName: "GraphQL", src: graphql},
+      {skillName: "Firebase", src: firebase}
     ],
     "Cloud & Deployment": [
       {skillName: "AWS", src: aws},
@@ -238,20 +261,59 @@ https://fontawesome.com/icons?d=gallery */
     "Tools & Others": [
       {skillName: "Git", src: git},
       {skillName: "Postman", src: postman},
-      {skillName: "Firebase", src: firebase},
+      {skillName: "Swagger", src: swagger},
       {skillName: "Figma", src: figma}
     ],
     "Data Science & ML": {
-      "Programming Languages": [
+      "Data Analysis": [
         {
           skillName: "Python",
           src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
         },
         {
-          skillName: "R",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg"
+          skillName: "Pandas",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
+        },
+        {
+          skillName: "NumPy",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
+        },
+        {
+          skillName: "BeautifulSoup",
+          src: beautifulsoup
+        },
+        {
+          skillName: "Scrapy",
+          src: scrapy
+        },
+        {
+          skillName: "Microsoft Excel",
+          src: excel
+        },
+        {
+          skillName: "Jupyter",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"
         }
       ],
+      "Data Visualization": [
+        {
+          skillName: "Matplotlib",
+          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg"
+        },
+        {
+          skillName: "Seaborn",
+          src: seaborn
+        },
+        {
+          skillName: "Tableau",
+          src: tableau
+        },
+        {
+          skillName: "Power BI",
+          src: powerbi
+        }
+      ],
+
       "Machine Learning": [
         {
           skillName: "TensorFlow",
@@ -263,101 +325,38 @@ https://fontawesome.com/icons?d=gallery */
         },
         {
           skillName: "Scikit-learn",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikit-learn/scikit-learn-original.svg"
+          src: scikitlearn
         },
         {
           skillName: "Keras",
           src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg"
-        }
-      ],
-      "Data Analysis": [
-        {
-          skillName: "Pandas",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
         },
-        {
-          skillName: "NumPy",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
-        },
-        {
-          skillName: "Jupyter",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"
-        },
-        {
-          skillName: "Microsoft Excel",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg"
-        },
-        {
-          skillName: "BeautifulSoup",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-        },
-        {
-          skillName: "Scrapy",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-        }
-      ],
-      "Data Visualization": [
-        {
-          skillName: "Matplotlib",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg"
-        },
-        {
-          skillName: "Seaborn",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/seaborn/seaborn-original.svg"
-        },
-        {
-          skillName: "Tableau",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tableau/tableau-original.svg"
-        },
-        {
-          skillName: "Power BI",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg"
-        }
-      ],
-      "Computer Vision": [
         {
           skillName: "OpenCV",
           src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
         },
         {
           skillName: "OCR",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+          src: ocr
         }
       ],
+
       "AI & APIs": [
         {
-          skillName: "OpenAI API",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg"
+          skillName: "Ollama",
+          src: ollama
         },
         {
           skillName: "Hugging Face",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/huggingface/huggingface-original.svg"
+          src: huggingface
         },
         {
           skillName: "LangChain",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+          src: langchain
         },
         {
-          skillName: "Streamlit",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg"
-        }
-      ],
-      "Big Data & Cloud": [
-        {
-          skillName: "Apache Spark",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"
-        },
-        {
-          skillName: "Hadoop",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hadoop/hadoop-original.svg"
-        },
-        {
-          skillName: "AWS SageMaker",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
-        },
-        {
-          skillName: "Google Colab",
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+          skillName: "OpenAI API",
+          src: openai
         }
       ]
     }

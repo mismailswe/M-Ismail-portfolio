@@ -30,29 +30,33 @@
   border-radius: 10px;
   border: 1px solid $lightBorder1;
   justify-content: center;
+  box-shadow: $lightBoxShadow 0px 8px 25px -12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.project-card-light {
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
+// .project-card-light {
+//   box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
+//   -webkit-transition: all 0.3s ease;
+//   -o-transition: all 0.3s ease;
+//   transition: all 0.3s ease;
+// }
 
-.project-card-dark {
-  box-shadow: 0px 10px 30px -15px $darkBoxShadow;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.25s ease;
-}
+// .project-card-dark {
+//   box-shadow: 0px 10px 30px -15px $darkBoxShadow;
+//   -webkit-transition: all 0.3s ease;
+//   -o-transition: all 0.3s ease;
+//   transition: all 0.25s ease;
+// }
 
 .project-detail {
   text-align: center;
 }
 .project-card-light:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+  transform: translateY(-8px);
+  box-shadow: #d9dbdf 0px 20px 40px -15px;
 }
 .project-card-dark:hover {
-  box-shadow: 0px 20px 30px -10px $darkBoxShadow;
+  transform: translateY(-8px);
+  box-shadow: #d9dbdf 0px 20px 40px -15px;
 }
 .project-image {
   position: relative;

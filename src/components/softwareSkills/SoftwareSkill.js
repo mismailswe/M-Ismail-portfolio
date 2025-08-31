@@ -68,8 +68,8 @@ export default function SoftwareSkill() {
                   <div key={i} className="skill-item" name={skills.skillName}>
                     <div className="skill-icon">
                       <img
-                        width={"32px"}
-                        height={"32px"}
+                        width={"35px"}
+                        height={"35px"}
                         src={skills.src}
                         alt={skills.skillName}
                       />

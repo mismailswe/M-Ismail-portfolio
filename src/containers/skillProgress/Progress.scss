@@ -19,6 +19,9 @@
   position: relative;
   overflow: hidden;
 }
+.skills-heading-margin {
+  margin-top: 10px;
+}
 .skill {
   line-height: 3.5vw;
 }
@@ -29,7 +32,7 @@
 .skills-container {
   display: flex;
   width: 90%;
-  padding: 20px 10px;
+  padding: 0px 10px;
   margin: 0px auto;
   // margin-top: 2rem;
 

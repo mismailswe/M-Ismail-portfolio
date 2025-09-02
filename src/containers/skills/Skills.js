@@ -17,9 +17,9 @@ export default function Skills() {
       <div className="skills-main-div">
         <SoftwareSkill />
       </div>
-      <div className="skills-main-div">
+      <div className="skills-main-div" style={{marginTop: "20px"}}>
         <Fade left duration={1000}>
-          <div className="skills-image-div">
+          <div className="skills-image-div ">
             {illustration.animated ? (
               <DisplayLottie animationData={codingPerson} />
             ) : (

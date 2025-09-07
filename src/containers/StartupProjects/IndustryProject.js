@@ -33,16 +33,12 @@ export default function IndustryProject() {
 
   const nextProject = () => {
     if (isTransitioning) return;
-    setIsTransitioning(true);
     setCurrentProject(prev => (prev + 1) % totalProjects);
-    setTimeout(() => setIsTransitioning(false), 600);
   };
 
   const prevProject = () => {
     if (isTransitioning) return;
-    setIsTransitioning(true);
     setCurrentProject(prev => (prev - 1 + totalProjects) % totalProjects);
-    setTimeout(() => setIsTransitioning(false), 600);
   };
 
   const goToProject = projectIndex => {
@@ -71,17 +67,17 @@ export default function IndustryProject() {
   };
 
   // Auto-play functionality - move one project at a time
-  // useEffect(() => {
-  //   if (!shouldShowSlider || isPaused) return;
+  useEffect(() => {
+    if (!shouldShowSlider || isPaused) return;
 
-  //   const interval = setInterval(() => {
-  //     if (!isTransitioning) {
-  //       nextProject();
-  //     }
-  //   }, 4000); // Change project every 4 seconds
+    const interval = setInterval(() => {
+      if (!isTransitioning) {
+        nextProject();
+      }
+    }, 4000); // Change project every 4 seconds
 
-  //   return () => clearInterval(interval);
-  // }, [shouldShowSlider, currentProject, isTransitioning, isPaused]);
+    return () => clearInterval(interval);
+  }, [shouldShowSlider, currentProject, isTransitioning, isPaused]);
 
   // Keyboard navigation
   useEffect(() => {

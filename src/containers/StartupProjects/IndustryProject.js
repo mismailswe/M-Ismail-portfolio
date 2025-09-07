@@ -71,17 +71,17 @@ export default function IndustryProject() {
   };
 
   // Auto-play functionality - move one project at a time
-  useEffect(() => {
-    if (!shouldShowSlider || isPaused) return;
+  // useEffect(() => {
+  //   if (!shouldShowSlider || isPaused) return;
 
-    const interval = setInterval(() => {
-      if (!isTransitioning) {
-        nextProject();
-      }
-    }, 4000); // Change project every 4 seconds
+  //   const interval = setInterval(() => {
+  //     if (!isTransitioning) {
+  //       nextProject();
+  //     }
+  //   }, 4000); // Change project every 4 seconds
 
-    return () => clearInterval(interval);
-  }, [shouldShowSlider, currentProject, isTransitioning, isPaused]);
+  //   return () => clearInterval(interval);
+  // }, [shouldShowSlider, currentProject, isTransitioning, isPaused]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -98,10 +98,6 @@ export default function IndustryProject() {
     window.addEventListener("keydown", handleKeyPress);
     return () => window.removeEventListener("keydown", handleKeyPress);
   }, [shouldShowSlider]);
-
-  // if (!industryProjects.display) {
-  //   return null;
-  // }
 
   return (
     <>
@@ -204,7 +200,7 @@ export default function IndustryProject() {
                 {shouldShowSlider ? (
                   <div className="projects-slider-container">
                     <div
-                      className={`projects-slider ${isPaused ? "paused" : ""}`}
+                      className={`projects-slider  ${isPaused ? "paused" : ""}`}
                       ref={sliderRef}
                       onMouseEnter={() => setIsPaused(true)}
                       onMouseLeave={() => setIsPaused(false)}
@@ -227,8 +223,8 @@ export default function IndustryProject() {
                             key={`${project.originalIndex}-${i}-${currentProject}`}
                             className={
                               isDark
-                                ? "dark-mode project-card project-card-dark slider-project-card"
-                                : "project-card project-card-light slider-project-card"
+                                ? "dark-mode project-card project-card-dark "
+                                : "project-card project-card-light "
                             }
                           >
                             {project.image ? (

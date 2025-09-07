@@ -503,7 +503,7 @@ const openSource = {
 
 const industryProjects = {
   title: "Industry Projects",
-  subtitle: "Some of the industry projects that, I have worked so far",
+  subtitle: "Some of the software development projects that, I have worked",
   projects: [
     {
       image: require("./assets/images/rancher.png"),

@@ -1,5 +1,10 @@
 @import "../../_globalColor";
-
+.achievement-main {
+  width: 90%;
+  padding: 0px 10px;
+  margin: 0px auto;
+  margin-top: 12px;
+}
 .achievement-heading {
   font-size: 56px;
   font-weight: 400;
@@ -30,5 +35,10 @@
     font-size: 16px;
     line-height: normal;
     text-align: center;
+  }
+}
+@media (max-width: 320px) {
+  .achievement-main {
+    width: auto;
   }
 }

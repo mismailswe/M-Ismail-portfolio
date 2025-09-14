@@ -41,13 +41,6 @@ export default function IndustryProject() {
     setCurrentProject(prev => (prev - 1 + totalProjects) % totalProjects);
   };
 
-  const goToProject = projectIndex => {
-    if (isTransitioning || projectIndex === currentProject) return;
-    setIsTransitioning(true);
-    setCurrentProject(projectIndex);
-    setTimeout(() => setIsTransitioning(false), 600);
-  };
-
   const getVisibleProjects = () => {
     const projects = [];
     // Create a continuous carousel by duplicating projects
@@ -59,11 +52,6 @@ export default function IndustryProject() {
       });
     }
     return projects;
-  };
-
-  const getSlideTransform = () => {
-    if (!isTransitioning) return "translateX(0)";
-    return "translateX(0)";
   };
 
   // Auto-play functionality - move one project at a time
@@ -329,54 +317,6 @@ export default function IndustryProject() {
                           />
                         </svg>
                       </button>
-                    </div>
-
-                    <div className="slider-controls">
-                      <div className="slider-actions">
-                        <button
-                          className="slider-action-btn"
-                          onClick={prevProject}
-                          disabled={isTransitioning}
-                        >
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M15 18L9 12L15 6"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                          Previous
-                        </button>
-
-                        <button
-                          className="slider-action-btn"
-                          onClick={nextProject}
-                          disabled={isTransitioning}
-                        >
-                          Next
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M9 18L15 12L9 6"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </button>
-                      </div>
                     </div>
                   </div>
                 ) : (

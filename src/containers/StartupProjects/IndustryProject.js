@@ -10,6 +10,7 @@ export default function IndustryProject() {
   const [isDesktop, setIsDesktop] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [margin, setMargin] = useState(0);
   const sliderRef = useRef(null);
 
   function openProjectInNewWindow(url) {
@@ -33,7 +34,8 @@ export default function IndustryProject() {
 
   const nextProject = () => {
     if (isTransitioning) return;
-    setCurrentProject(prev => (prev + 1) % totalProjects);
+    // setCurrentProject(prev => (prev + 1) % totalProjects);
+    setMargin(prev => prev + 369);
   };
 
   const prevProject = () => {
@@ -190,19 +192,15 @@ export default function IndustryProject() {
                       onMouseLeave={() => setIsPaused(false)}
                     >
                       <div
-                        className={`projects-slider-content ${
-                          isTransitioning ? "transitioning" : ""
-                        }`}
+                        className={`projects-slider-content 
+                          ${isTransitioning ? "transitioning" : ""}
+                          `}
                         style={{
-                          transform: isTransitioning
-                            ? "translateX(-100%)"
-                            : "translateX(0)",
-                          transition: isTransitioning
-                            ? "transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
-                            : "none"
+                          transform: `translateX(-${margin}px)`,
+                          transition: "transform 0.5s ease-in-out"
                         }}
                       >
-                        {getVisibleProjects().map((project, i) => (
+                        {industryProjects.projects.map((project, i) => (
                           <div
                             key={`${project.originalIndex}-${i}-${currentProject}`}
                             className={

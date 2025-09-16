@@ -145,8 +145,7 @@
 }
 
 .projects-slider-content {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   gap: 20px;
   width: 100%;
   transform: translateX(0);

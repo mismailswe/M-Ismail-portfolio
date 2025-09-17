@@ -30,16 +30,29 @@ export default function IndustryProject() {
 
   const totalProjects = industryProjects.projects.length;
   const shouldShowSlider = isDesktop && totalProjects > 4;
-  const projectsPerSlide = 4;
 
   const nextProject = () => {
     if (isTransitioning) return;
     setMargin(prev => prev + 369);
+    if (currentProject >= totalProjects - 4) {
+      setCurrentProject(0);
+      setMargin(0);
+      return;
+    } else {
+      setCurrentProject(prev => prev + 1);
+    }
   };
 
   const prevProject = () => {
     if (isTransitioning) return;
     setMargin(prev => prev - 369);
+    if (currentProject === 0) {
+      setCurrentProject(totalProjects - 4);
+      setMargin((totalProjects - 4) * 369);
+      return;
+    } else {
+      setCurrentProject(prev => prev - 1);
+    }
   };
 
   // Auto-play functionality - move one project at a time
@@ -48,7 +61,7 @@ export default function IndustryProject() {
 
     const interval = setInterval(() => {
       if (!isTransitioning) {
-        // nextProject();
+        nextProject();
       }
     }, 4000); // Change project every 4 seconds
 

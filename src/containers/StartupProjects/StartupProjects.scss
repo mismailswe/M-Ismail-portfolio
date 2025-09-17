@@ -23,6 +23,7 @@
   line-height: 1.5rem;
 }
 .project-card {
+  flex: 0 0 calc(23.5% - 40px);
   background-color: $lightBackground2;
   padding: 1.5rem;
   border-radius: 10px;

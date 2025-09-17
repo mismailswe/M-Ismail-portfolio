@@ -34,26 +34,12 @@ export default function IndustryProject() {
 
   const nextProject = () => {
     if (isTransitioning) return;
-    // setCurrentProject(prev => (prev + 1) % totalProjects);
     setMargin(prev => prev + 369);
   };
 
   const prevProject = () => {
     if (isTransitioning) return;
-    setCurrentProject(prev => (prev - 1 + totalProjects) % totalProjects);
-  };
-
-  const getVisibleProjects = () => {
-    const projects = [];
-    // Create a continuous carousel by duplicating projects
-    for (let i = 0; i < projectsPerSlide; i++) {
-      const projectIndex = (currentProject + i) % totalProjects;
-      projects.push({
-        ...industryProjects.projects[projectIndex],
-        originalIndex: projectIndex
-      });
-    }
-    return projects;
+    setMargin(prev => prev - 369);
   };
 
   // Auto-play functionality - move one project at a time
@@ -62,7 +48,7 @@ export default function IndustryProject() {
 
     const interval = setInterval(() => {
       if (!isTransitioning) {
-        nextProject();
+        // nextProject();
       }
     }, 4000); // Change project every 4 seconds
 

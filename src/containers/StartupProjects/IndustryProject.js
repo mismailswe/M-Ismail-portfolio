@@ -34,22 +34,21 @@ export default function IndustryProject() {
 
   const nextProject = () => {
     if (isTransitioning) return;
-    setMargin(prev => prev + 369);
-    const project = industryProjects.projects.find(
-      proj => proj.Id === currentProject
-    );
-    if (project) {
-      setIndusteryProj(projects => [...projects, project]);
-    }
-    setCurrentProject(prev => prev + 1);
 
-    // if (currentProject >= totalProjects - 4) {
-    //   setCurrentProject(0);
-    //   setMargin(0);
-    //   return;
-    // } else {
-    //   setCurrentProject(prev => prev + 1);
-    // }
+    if (currentProject >= totalProjects - 4) {
+      setCurrentProject(0);
+      setMargin(0);
+      setIndusteryProj(industryProjects.projects);
+    } else {
+      setMargin(prev => prev + 369);
+      setCurrentProject(prev => prev + 1);
+      const project = industryProjects.projects.find(
+        proj => proj.Id === currentProject
+      );
+      if (project) {
+        setIndusteryProj(projects => [...projects, project]);
+      }
+    }
   };
 
   const prevProject = () => {

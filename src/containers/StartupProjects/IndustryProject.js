@@ -6,11 +6,12 @@ import StyleContext from "../../contexts/StyleContext";
 import {useMediaQuery} from "react-responsive";
 
 export default function IndustryProject() {
-  const [currentProject, setCurrentProject] = useState(0);
+  const [currentProject, setCurrentProject] = useState(1);
   const [isDesktop, setIsDesktop] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [margin, setMargin] = useState(0);
+  const [industeryProj, setIndusteryProj] = useState(industryProjects.projects);
   const sliderRef = useRef(null);
 
   function openProjectInNewWindow(url) {
@@ -34,13 +35,21 @@ export default function IndustryProject() {
   const nextProject = () => {
     if (isTransitioning) return;
     setMargin(prev => prev + 369);
-    if (currentProject >= totalProjects - 4) {
-      setCurrentProject(0);
-      setMargin(0);
-      return;
-    } else {
-      setCurrentProject(prev => prev + 1);
+    const project = industryProjects.projects.find(
+      proj => proj.Id === currentProject
+    );
+    if (project) {
+      setIndusteryProj(projects => [...projects, project]);
     }
+    setCurrentProject(prev => prev + 1);
+
+    // if (currentProject >= totalProjects - 4) {
+    //   setCurrentProject(0);
+    //   setMargin(0);
+    //   return;
+    // } else {
+    //   setCurrentProject(prev => prev + 1);
+    // }
   };
 
   const prevProject = () => {
@@ -199,7 +208,7 @@ export default function IndustryProject() {
                           transition: "transform 0.5s ease-in-out"
                         }}
                       >
-                        {industryProjects.projects.map((project, i) => (
+                        {industeryProj.map((project, i) => (
                           <div
                             key={`${project.originalIndex}-${i}-${currentProject}`}
                             className={

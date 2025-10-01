@@ -1,17 +1,17 @@
 import React, {useContext, useState, useEffect, useRef} from "react";
 import "./StartupProjects.scss";
-import {industryProjects} from "../../portfolio";
+import {softwareProjects} from "../../portfolio";
 import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 import {useMediaQuery} from "react-responsive";
 
-export default function IndustryProject() {
+export default function SoftwareProject() {
   const [currentProject, setCurrentProject] = useState(1);
   const [isDesktop, setIsDesktop] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [margin, setMargin] = useState(0);
-  const [industeryProj, setIndusteryProj] = useState(industryProjects.projects);
+  const [industeryProj, setIndusteryProj] = useState(softwareProjects.projects);
   const sliderRef = useRef(null);
 
   function openProjectInNewWindow(url) {
@@ -29,7 +29,7 @@ export default function IndustryProject() {
     setIsDesktop(!isSmallScreen && !isLaptopScreen);
   }, [isSmallScreen, isLaptopScreen]);
 
-  const totalProjects = industryProjects.projects.length;
+  const totalProjects = softwareProjects.projects.length;
   const shouldShowSlider = isDesktop && totalProjects > 4;
 
   const nextProject = () => {
@@ -38,11 +38,11 @@ export default function IndustryProject() {
     if (currentProject >= totalProjects - 4) {
       setCurrentProject(0);
       setMargin(0);
-      setIndusteryProj(industryProjects.projects);
+      setIndusteryProj(softwareProjects.projects);
     } else {
       setMargin(prev => prev + 369);
       setCurrentProject(prev => prev + 1);
-      const project = industryProjects.projects.find(
+      const project = softwareProjects.projects.find(
         proj => proj.Id === currentProject
       );
       if (project) {
@@ -98,7 +98,7 @@ export default function IndustryProject() {
         <>
           <div className="main" id="projects" style={{marginTop: "22px"}}>
             <div>
-              <h1 className="skills-heading">{industryProjects.title}</h1>
+              <h1 className="skills-heading">{softwareProjects.title}</h1>
               <p
                 className={
                   isDark
@@ -106,11 +106,11 @@ export default function IndustryProject() {
                     : "subTitle project-subtitle"
                 }
               >
-                {industryProjects.subtitle}
+                {softwareProjects.subtitle}
               </p>
 
               <div className="projects-container">
-                {industryProjects.projects.map((project, i) => {
+                {softwareProjects.projects.map((project, i) => {
                   return (
                     <div
                       key={i}
@@ -179,7 +179,7 @@ export default function IndustryProject() {
           <Fade bottom duration={1000} distance="20px">
             <div className="main" id="projects">
               <div>
-                <h1 className="skills-heading">{industryProjects.title}</h1>
+                <h1 className="skills-heading">{softwareProjects.title}</h1>
                 <p
                   className={
                     isDark
@@ -187,7 +187,7 @@ export default function IndustryProject() {
                       : "subTitle project-subtitle"
                   }
                 >
-                  {industryProjects.subtitle}
+                  {softwareProjects.subtitle}
                 </p>
 
                 {shouldShowSlider ? (
@@ -326,7 +326,7 @@ export default function IndustryProject() {
                   </div>
                 ) : (
                   <div className="projects-container">
-                    {industryProjects.projects.map((project, i) => {
+                    {softwareProjects.projects.map((project, i) => {
                       return (
                         <div
                           key={i}

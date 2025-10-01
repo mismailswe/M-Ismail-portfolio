@@ -501,7 +501,7 @@ const openSource = {
 
 // Some big industry projects
 
-const industryProjects = {
+const softwareProjects = {
   title: "Software Projects",
   subtitle: "Some of the software development projects that, I have worked",
   projects: [
@@ -562,7 +562,7 @@ const industryProjects = {
 const aiProjects = {
   title: "Data Science & ML Projects",
   subtitle:
-    "Some of the data science and machine learning projects that I have worked on",
+    "Some of the data science and machine learning projects that I have worked",
   projects: [
     {
       Id: 1,
@@ -799,7 +799,7 @@ const twitterDetails = {
 };
 
 export {
-  industryProjects,
+  softwareProjects,
   aiProjects,
   illustration,
   greeting,

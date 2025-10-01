@@ -5,7 +5,7 @@ import Skills from "./skills/Skills";
 import StackProgress from "./skillProgress/skillProgress";
 import WorkExperience from "./workExperience/WorkExperience";
 import Projects from "./projects/Projects";
-import IndustryProject from "./StartupProjects/IndustryProject";
+import SoftwareProject from "./StartupProjects/SoftwareProject";
 import AiProjects from "./StartupProjects/AiProjects";
 import Achievement from "./achievement/Achievement";
 import Footer from "../components/footer/Footer";
@@ -49,7 +49,7 @@ export default class Main extends Component {
           <Education />
           <WorkExperience />
           <Projects />
-          <IndustryProject />
+          <SoftwareProject />
           <AiProjects />
           <Achievement />
           <Profile />

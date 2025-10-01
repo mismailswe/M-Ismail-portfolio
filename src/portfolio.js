@@ -503,7 +503,8 @@ const openSource = {
 
 const softwareProjects = {
   title: "Software Projects",
-  subtitle: "Some of the software development projects that, I have worked",
+  subtitle: "Some of the software development projects that, I have worked on",
+
   projects: [
     {
       Id: 1,
@@ -521,27 +522,49 @@ const softwareProjects = {
     },
     {
       Id: 3,
+      image: require("./assets/images/truebiddata.jpeg"),
+      projectName: "TrueBidData",
+      projectDesc:
+        "Responsive website and platform for TrueBidData — implemented frontend components, REST APIs, and data-visualization dashboards with integrations for third-party services."
+    },
+    {
+      Id: 5,
+      image: require("./assets/images/fastestimator.png"),
+      projectName: "FastEstimator",
+      projectDesc:
+        "Documentation/demo site and example integrations for FastEstimator — includes model training pipelines, example notebooks, and automated CI deployment of docs and examples."
+    },
+    {
+      Id: 4,
+      image: require("./assets/images/projut.png"),
+      projectName: "Projut",
+      projectDesc:
+        "Web application for Projut featuring project and quotation workflows, user & role management, dashboard reporting, and secure API endpoints for integrations."
+    },
+
+    {
+      Id: 6,
       image: require("./assets/images/bodyslide.png"),
       projectName: "Bodyslide",
       projectDesc:
         "BodySlide is a premier spa and massage center in Canada offering top-quality masseuse services. Bodyslide offering exceptional service to the clients, delivering a range of customized massage therapies to meet their unique needs"
     },
     {
-      Id: 4,
+      Id: 7,
       image: require("./assets/images/resturent.png"),
       projectName: "Restaurant Management System",
       projectDesc:
         "Engineered a comprehensive system overseeing end-to-end restaurant operations, optimizing food inventory management, order processing, and seamless integration with billing and accounting modules for enhanced overall efficiency"
     },
     {
-      Id: 5,
+      Id: 8,
       image: require("./assets/images/parking.png"),
       projectName: "SpotTroop",
       projectDesc:
         "A parking reservation website in Germany, Spot Troop simplifies the process for drivers to discover and book parking spots in advance within their vicinity"
     },
     {
-      Id: 6,
+      Id: 9,
       image: require("./assets/images/propertySite.png"),
       projectName: "Property Management",
       projectDesc:
@@ -549,7 +572,7 @@ const softwareProjects = {
     },
 
     {
-      Id: 7,
+      Id: 10,
       image: require("./assets/images/rezzlist.jpg"),
       projectName: "Rezzlist",
       projectDesc:
@@ -562,57 +585,56 @@ const softwareProjects = {
 const aiProjects = {
   title: "Data Science & ML Projects",
   subtitle:
-    "Some of the data science and machine learning projects that I have worked",
+    "Some of the data science and machine learning projects that I have worked on",
   projects: [
     {
       Id: 1,
-      image: require("./assets/images/rancher.png"),
-      projectName: "Rancher Cafe",
+      image: require("./assets/images/sales_forecast.png"),
+      projectName: "Sales Forecasting",
       projectDesc:
-        "Rancher Cafe connects customers with Rancher Cafe branches that offer food delivery in their vicinity. Customers can browse the menus of available branches, send in food orders, and make payment accordingly"
+        "Time-series forecasting system that predicts weekly sales per store using ARIMA, Prophet and LSTM ensembles. Includes data cleaning, feature engineering, and a dashboard for scenario analysis and KPI tracking."
     },
     {
       Id: 2,
-      image: require("./assets/images/dhartee.png"),
-      projectName: "Dhartee.pk",
+      image: require("./assets/images/image_classifier.png"),
+      projectName: "Image Classification (CNN)",
       projectDesc:
-        "Dhartee PK is an innovative real estate portal enabling purchase and sale of property. You get matchless property viewing experience through 360 interactive panoramic photos and virtual tours"
+        "Convolutional Neural Network pipeline for multi-class image classification. Trained with transfer learning (ResNet/Inception), augmented dataset, and model explainability via Grad-CAM."
     },
     {
       Id: 3,
-      image: require("./assets/images/bodyslide.png"),
-      projectName: "Bodyslide",
+      image: require("./assets/images/churn_model.png"),
+      projectName: "Customer Churn Prediction",
       projectDesc:
-        "BodySlide is a premier spa and massage center in Canada offering top-quality masseuse services. Bodyslide offering exceptional service to the clients, delivering a range of customized massage therapies to meet their unique needs"
+        "Supervised learning model to predict customer churn using XGBoost and stacked ensembles. Includes feature importance analysis, calibration, and business rules for targeted retention campaigns."
     },
     {
       Id: 4,
-      image: require("./assets/images/resturent.png"),
-      projectName: "Restaurant Management System",
+      image: require("./assets/images/recommender.jpeg"),
+      projectName: "Recommendation System",
       projectDesc:
-        "Engineered a comprehensive system overseeing end-to-end restaurant operations, optimizing food inventory management, order processing, and seamless integration with billing and accounting modules for enhanced overall efficiency"
+        "Hybrid recommender combining collaborative filtering and content-based methods to provide personalized product recommendations. Implemented offline training and real-time scoring endpoints."
     },
     {
       Id: 5,
-      image: require("./assets/images/parking.png"),
-      projectName: "SpotTroop",
+      image: require("./assets/images/nlp_sentiment.png"),
+      projectName: "NLP Sentiment Analyzer",
       projectDesc:
-        "A parking reservation website in Germany, Spot Troop simplifies the process for drivers to discover and book parking spots in advance within their vicinity"
+        "NLP pipeline for sentiment and intent analysis on user reviews using transformers (fine-tuned BERT). Includes entity extraction, topic modelling, and dashboarding of sentiment trends."
     },
     {
       Id: 6,
-      image: require("./assets/images/propertySite.png"),
-      projectName: "Property Management",
+      image: require("./assets/images/anomaly_detection.png"),
+      projectName: "Time-series Anomaly Detection",
       projectDesc:
-        "Streamline property management with a unified platform, empowering landlords and property managers to effortlessly track and manage properties, tenants, leases, and payments"
+        "Anomaly detection system for sensor/time-series data using Isolation Forests and LSTM-autoencoders. Built streaming alerts and root-cause analysis for operations teams."
     },
-
     {
       Id: 7,
-      image: require("./assets/images/rezzlist.jpg"),
-      projectName: "Rezzlist",
+      image: require("./assets/images/credit_scoring.jpg"),
+      projectName: "Credit Scoring Model",
       projectDesc:
-        "With rezzlist, you can easily make a reservation for your next dining experience. With just a few clicks, you can browse resuturents, available tables, select your preferred time and date, and secure your booking in no time at a specfic city"
+        "Risk-scoring model using logistic regression and tree-based methods for loan default prediction. Includes model monitoring, fairness checks, and explainability reports for compliance."
     }
   ],
   display: true // Set false to hide this section, defaults to true

@@ -222,6 +222,8 @@
 }
 
 .slider-arrow {
+  margin-left: -37px;
+  margin-right: -37px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -428,8 +430,6 @@
       rgba(55, 65, 81, 0.85)
     );
     color: #8b5cf6;
-    margin-left: -37px;
-    margin-right: -37px;
 
     &:hover:not(.disabled) {
       background: linear-gradient(

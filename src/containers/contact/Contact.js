@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import "./Contact.scss";
 import {contactInfo} from "../../portfolio";
 import {Fade} from "react-reveal";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,6 +13,9 @@ export default function Contact() {
     privacyAccepted: false
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
+
   const handleInputChange = e => {
     const {name, value, type, checked} = e.target;
     setFormData(prev => ({
@@ -20,10 +24,44 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+    setIsLoading(true);
+    setSubmitMessage("");
+
+    try {
+      // EmailJS configuration - you'll need to replace these with your actual values
+      const serviceId = "service_ocsnkqm"; // Replace with your EmailJS service ID
+      const templateId = "template_kq39dzm"; // Replace with your EmailJS template ID
+      const publicKey = "r_Rgkmdt-ibGHzPVP"; // Replace with your EmailJS public key
+
+      const templateParams = {
+        to_email: "m.ismail.swe@gmail.com",
+        from_name: formData.fullName,
+        from_email: formData.email,
+        phone: formData.phone || "Not provided",
+        message: formData.message,
+        reply_to: formData.email
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
+      setSubmitMessage("Message sent successfully! I'll get back to you soon.");
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        message: "",
+        privacyAccepted: false
+      });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setSubmitMessage(
+        "Sorry, there was an error sending your message. Please try again or contact me directly at m.ismail.swe@gmail.com"
+      );
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -159,9 +197,24 @@ export default function Contact() {
                 </div>
               </div>
 
+              {/* Submit Message */}
+              {submitMessage && (
+                <div
+                  className={`submit-message ${
+                    submitMessage.includes("successfully") ? "success" : "error"
+                  }`}
+                >
+                  {submitMessage}
+                </div>
+              )}
+
               {/* Submit Button */}
-              <button type="submit" className="submit-button">
-                Submit
+              <button
+                type="submit"
+                className="submit-button"
+                disabled={isLoading}
+              >
+                {isLoading ? "Sending..." : "Submit"}
               </button>
             </form>
           </div>

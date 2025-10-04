@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./Contact.scss";
 import {contactInfo} from "../../portfolio";
 import {Fade} from "react-reveal";
@@ -16,6 +16,17 @@ export default function Contact() {
   const [isLoading, setIsLoading] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
 
+  // Auto-hide message after 10 seconds
+  useEffect(() => {
+    if (submitMessage) {
+      const timer = setTimeout(() => {
+        setSubmitMessage("");
+      }, 10000); // 10 seconds
+
+      return () => clearTimeout(timer);
+    }
+  }, [submitMessage]);
+
   const handleInputChange = e => {
     const {name, value, type, checked} = e.target;
     setFormData(prev => ({
@@ -30,18 +41,22 @@ export default function Contact() {
     setSubmitMessage("");
 
     try {
-      // EmailJS configuration - you'll need to replace these with your actual values
-      const serviceId = "service_ocsnkqm"; // Replace with your EmailJS service ID
-      const templateId = "template_kq39dzm"; // Replace with your EmailJS template ID
-      const publicKey = "r_Rgkmdt-ibGHzPVP"; // Replace with your EmailJS public key
+      // EmailJS configuration
+      const serviceId = "service_ocsnkqm";
+      const templateId = "template_kq39dzm";
+      const publicKey = "r_Rgkmdt-ibGHzPVP";
 
       const templateParams = {
-        to_email: "m.ismail.swe@gmail.com",
-        from_name: formData.fullName,
+        title: "Portfolio Reference Email",
+        email: "m.ismail.swe@gmail.com",
+        name: formData.fullName,
         from_email: formData.email,
+        time: new Date().toLocaleString(),
         phone: formData.phone || "Not provided",
         message: formData.message,
-        reply_to: formData.email
+        reply_to: formData.email,
+        to_name: "M. Ismail",
+        subject: `New Contact Form Message from ${formData.fullName}`
       };
 
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
@@ -204,7 +219,14 @@ export default function Contact() {
                     submitMessage.includes("successfully") ? "success" : "error"
                   }`}
                 >
-                  {submitMessage}
+                  <span className="message-text">{submitMessage}</span>
+                  <button
+                    className="close-message-btn"
+                    onClick={() => setSubmitMessage("")}
+                    aria-label="Close message"
+                  >
+                    ×
+                  </button>
                 </div>
               )}
 

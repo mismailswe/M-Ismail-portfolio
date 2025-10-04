@@ -3,7 +3,7 @@
 // Main container with gradient background
 .contact-container {
   display: flex;
-  min-height: 100vh;
+  min-height: 82vh;
 
   padding: 2rem;
   gap: 3rem;
@@ -12,16 +12,20 @@
 
 .field-label-container {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 4px;
 }
 
 .required-field {
   color: red;
-  margin-left: 3px;
+
   font-size: 1.2rem;
   font-weight: 500;
   font-family: inherit;
+  line-height: 1;
+  position: relative;
+  top: 2px;
+  left: 1px;
 }
 
 // Left section - Contact Information
@@ -73,12 +77,16 @@
 // Right section - Contact Form
 .contact-form-section {
   flex: 1;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 20px;
-  padding: 2.5rem;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  background-color: $darkBackground;
+  padding: 1.5rem;
+  border-radius: 10px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  box-shadow: $lightBoxShadow 0px 8px 25px -12px;
+  border: 1px solid $lightBorder1;
+  transition: transform 0.6s ease-in-out;
 }
 
 .contact-form {

@@ -47,11 +47,15 @@ export default function Contact() {
 
           {/* Right Section - Contact Form */}
           <div className="contact-form-section">
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form
+              className="contact-form"
+              onSubmit={handleSubmit}
+              autoComplete="off"
+            >
               {/* Full Name Field */}
               <div className="form-field">
                 <div className="field-label-container">
-                  <label className="field-label">Name</label>
+                  <label className="field-label">Full Name</label>
                   <span className="required-field">*</span>
                 </div>
                 <input
@@ -62,6 +66,7 @@ export default function Contact() {
                   placeholder="Enter your full name..."
                   className="form-input"
                   required
+                  autoComplete="new-password"
                 />
               </div>
 
@@ -79,6 +84,7 @@ export default function Contact() {
                   placeholder="Enter your email address..."
                   className="form-input"
                   required
+                  autoComplete="new-password"
                 />
               </div>
 
@@ -94,7 +100,7 @@ export default function Contact() {
                   onChange={handleInputChange}
                   placeholder="Enter your phone number..."
                   className="form-input"
-                  required
+                  autoComplete="new-password"
                 />
               </div>
 
@@ -113,6 +119,7 @@ export default function Contact() {
                     className="form-textarea"
                     maxLength="300"
                     required
+                    autoComplete="off"
                   />
                 </div>
               </div>

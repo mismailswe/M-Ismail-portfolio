@@ -40,7 +40,7 @@ export default function SoftwareProject() {
       setMargin(0);
       setIndusteryProj(softwareProjects.projects);
     } else {
-      setMargin(prev => prev + 369);
+      setMargin(prev => prev + 335);
       setCurrentProject(prev => prev + 1);
       const project = softwareProjects.projects.find(
         proj => proj.Id === currentProject
@@ -53,10 +53,10 @@ export default function SoftwareProject() {
 
   const prevProject = () => {
     if (isTransitioning) return;
-    setMargin(prev => prev - 369);
+    setMargin(prev => prev - 335);
     if (currentProject === 0) {
       setCurrentProject(totalProjects - 4);
-      setMargin((totalProjects - 4) * 369);
+      setMargin((totalProjects - 4) * 335);
       return;
     } else {
       setCurrentProject(prev => prev - 1);

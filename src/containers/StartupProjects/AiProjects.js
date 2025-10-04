@@ -1,4 +1,10 @@
-import React, {useContext, useState, useEffect, useRef} from "react";
+import React, {
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+  useCallback
+} from "react";
 import "./StartupProjects.scss";
 import {aiProjects} from "../../portfolio";
 import {Fade} from "react-reveal";
@@ -13,6 +19,29 @@ export default function AiProjects() {
   const [margin, setMargin] = useState(0);
   const [industeryProj, setIndusteryProj] = useState(aiProjects.projects);
   const sliderRef = useRef(null);
+
+  // Dynamic margin calculation based on actual card width and gap
+  const calculateCardWidth = () => {
+    if (!sliderRef.current) return 369; // fallback to original value
+
+    // Get the actual rendered card width by measuring the first card
+    const firstCard = sliderRef.current.querySelector(".project-card");
+    if (firstCard) {
+      const cardWidth = firstCard.offsetWidth;
+      const gap = 20; // From CSS: gap: 20px
+      return cardWidth + gap;
+    }
+
+    // Fallback calculation if we can't measure the card
+    const containerWidth = sliderRef.current.offsetWidth;
+    const cardWidthPercentage = 23.5; // From CSS: calc(23.5% - 40px)
+    const cardPadding = 40; // From CSS: calc(23.5% - 40px)
+    const gap = 20; // From CSS: gap: 20px
+
+    const cardWidth =
+      (containerWidth * cardWidthPercentage) / 100 - cardPadding;
+    return cardWidth + gap;
+  };
 
   function openProjectInNewWindow(url) {
     var win = window.open(url, "_blank");
@@ -32,15 +61,44 @@ export default function AiProjects() {
   const totalProjects = aiProjects.projects.length;
   const shouldShowSlider = isDesktop && totalProjects > 4;
 
-  const nextProject = () => {
+  // Recalculate margin when component mounts or window resizes
+  useEffect(() => {
+    if (shouldShowSlider && sliderRef.current) {
+      // Small delay to ensure cards are rendered
+      const timer = setTimeout(() => {
+        const cardWidth = calculateCardWidth();
+        setMargin(currentProject * cardWidth);
+      }, 100);
+
+      return () => clearTimeout(timer);
+    }
+  }, [shouldShowSlider, currentProject]);
+
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (shouldShowSlider && sliderRef.current) {
+        const cardWidth = calculateCardWidth();
+        setMargin(currentProject * cardWidth);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [shouldShowSlider, currentProject]);
+
+  const nextProject = useCallback(() => {
     if (isTransitioning) return;
+
+    setIsTransitioning(true);
+    const cardWidth = calculateCardWidth();
 
     if (currentProject >= totalProjects - 4) {
       setCurrentProject(0);
       setMargin(0);
       setIndusteryProj(aiProjects.projects);
     } else {
-      setMargin(prev => prev + 369);
+      setMargin(prev => prev + cardWidth);
       setCurrentProject(prev => prev + 1);
       const project = aiProjects.projects.find(
         proj => proj.Id === currentProject
@@ -49,19 +107,27 @@ export default function AiProjects() {
         setIndusteryProj(projects => [...projects, project]);
       }
     }
-  };
 
-  const prevProject = () => {
+    // Reset transition state after animation completes
+    setTimeout(() => setIsTransitioning(false), 600);
+  }, [isTransitioning, currentProject, totalProjects]);
+
+  const prevProject = useCallback(() => {
     if (isTransitioning) return;
-    setMargin(prev => prev - 369);
+
+    setIsTransitioning(true);
+    const cardWidth = calculateCardWidth();
+    setMargin(prev => prev - cardWidth);
     if (currentProject === 0) {
       setCurrentProject(totalProjects - 4);
-      setMargin((totalProjects - 4) * 369);
-      return;
+      setMargin((totalProjects - 4) * cardWidth);
     } else {
       setCurrentProject(prev => prev - 1);
     }
-  };
+
+    // Reset transition state after animation completes
+    setTimeout(() => setIsTransitioning(false), 600);
+  }, [isTransitioning, currentProject, totalProjects]);
 
   // Auto-play functionality - move one project at a time
   useEffect(() => {
@@ -74,7 +140,13 @@ export default function AiProjects() {
     }, 4000); // Change project every 4 seconds
 
     return () => clearInterval(interval);
-  }, [shouldShowSlider, currentProject, isTransitioning, isPaused]);
+  }, [
+    shouldShowSlider,
+    currentProject,
+    isTransitioning,
+    isPaused,
+    nextProject
+  ]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -90,7 +162,7 @@ export default function AiProjects() {
 
     window.addEventListener("keydown", handleKeyPress);
     return () => window.removeEventListener("keydown", handleKeyPress);
-  }, [shouldShowSlider]);
+  }, [shouldShowSlider, nextProject, prevProject]);
 
   return (
     <>

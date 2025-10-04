@@ -1,90 +1,400 @@
 @import "../../_globalColor";
 
-.contact-div-main {
+// Main container with gradient background
+.contact-container {
   display: flex;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    $darkBackground 0%,
+    #1a1a2e 25%,
+    #2c3e50 50%,
+    #34495e 75%,
+    $darkBackground 100%
+  );
+  padding: 2rem;
+  gap: 3rem;
+  align-items: center;
+}
+
+// Left section - Contact Information
+.contact-info-section {
+  flex: 1;
+  color: white;
+  padding: 2rem;
+
+  .contact-us-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    color: white;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  .contact-main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .contact-alternative {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
+
+    .contact-email-link {
+      color: $buttonColor;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $buttonHover;
+      }
+    }
+  }
+}
+
+// Right section - Contact Form
+.contact-form-section {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .field-label {
+    color: white;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+}
+
+// Input containers with icons
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+
+  &:focus-within {
+    border-color: $buttonColor;
+    background: #333333;
+  }
+
+  .input-icon {
+    position: absolute;
+    left: 1rem;
+    width: 18px;
+    height: 18px;
+    color: rgba(255, 255, 255, 0.4);
+    z-index: 2;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+// Phone input with country code
+.phone-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+
+  &:focus-within {
+    border-color: $buttonColor;
+    background: #333333;
+  }
+
+  .country-code-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+
+    .flag {
+      font-size: 1.2rem;
+    }
+
+    .dropdown-arrow {
+      width: 16px;
+      height: 16px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .phone-input {
+    flex: 1;
+    padding: 1rem;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1rem;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .help-icon {
+    width: 20px;
+    height: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+}
+
+// Textarea with character counter
+.textarea-container {
+  position: relative;
+  background: #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+
+  &:focus-within {
+    border-color: $buttonColor;
+    background: #333333;
+  }
+
+  .form-textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 1rem;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .textarea-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+
+    .char-counter {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.85rem;
+    }
+
+    .resize-handle {
+      width: 16px;
+      height: 16px;
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+// Privacy policy section
+.privacy-section {
+  margin: 1rem 0;
+
+  .privacy-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+
+    .privacy-checkbox {
+      width: 18px;
+      height: 18px;
+      accent-color: $buttonColor;
+      cursor: pointer;
+    }
+
+    .privacy-text {
+      color: white;
+      font-size: 0.9rem;
+
+      .privacy-link {
+        color: $buttonColor;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $buttonHover;
+        }
+      }
+    }
+  }
+}
+
+// Submit button with portfolio theme
+.submit-button {
+  background: linear-gradient(135deg, $buttonColor 0%, $buttonHover 100%);
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+
+  &:hover {
+    background: linear-gradient(
+      135deg,
+      $buttonHover 0%,
+      lighten($buttonHover, 10%) 100%
+    );
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(85, 25, 139, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  .submit-arrow {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+// Responsive design
+@media (max-width: 1024px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .contact-info-section {
+    text-align: center;
+
+    .contact-main-title {
+      font-size: 2.5rem;
+    }
+  }
+
+  .contact-form-section {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 1rem;
+  }
+
+  .contact-info-section {
+    padding: 1rem;
+
+    .contact-main-title {
+      font-size: 2rem;
+    }
+
+    .contact-alternative {
+      font-size: 1rem;
+    }
+  }
+
+  .contact-form-section {
+    padding: 1.5rem;
+  }
+
+  .form-field {
+    gap: 0.75rem;
+  }
+
+  .input-container .form-input,
+  .phone-input-container .phone-input,
+  .form-textarea {
+    padding: 0.875rem;
+    font-size: 0.95rem;
+  }
+
+  .input-container .input-icon {
+    left: 0.875rem;
+    width: 16px;
+    height: 16px;
+  }
+
+  .phone-input-container {
+    .country-code-dropdown {
+      padding: 0.875rem;
+    }
+
+    .help-icon {
+      width: 18px;
+      height: 18px;
+      margin-right: 0.875rem;
+    }
+  }
+}
+
+// Legacy styles for backward compatibility
+.contact-margin-top {
+  margin-top: 0;
 }
 
 .dark-mode a {
   color: $textColorDark;
-}
-
-.contact-div-main > * {
-  flex: 1;
-}
-
-.contact-title {
-  font-size: 65px;
-  font-weight: 400;
-}
-
-.contact-detail,
-.contact-detail-email {
-  margin-top: 20px;
-  font-size: 40px;
-  font-weight: 400;
-  color: $subTitle;
-  text-decoration: none;
-}
-
-.contact-detail:hover,
-.contact-detail-email:hover {
-  color: $textColor;
-  text-shadow: 2px 1px 2px $contactDetailHoverTS;
-  transition: all 0.3s;
-}
-
-.contact-subtitle {
-  text-transform: uppercase;
-}
-
-.contact-text-div {
-  margin-top: 1.5rem;
-}
-
-.contact-margin-top {
-  margin-top: 1.6rem;
-  @media (max-width: 600px) {
-    margin-top: 1rem;
-  }
-}
-
-.contact-image-div > img {
-  max-width: 100%;
-  height: auto;
-  margin-left: 1.5rem;
-  margin-top: -4rem;
-}
-
-/* Media Query */
-@media (max-width: 1380px), (max-width: 768px) {
-  .contact-title {
-    font-size: 56px;
-    font-weight: 400;
-    text-align: center;
-  }
-
-  .contact-title {
-    font-size: 40px;
-    text-align: center;
-  }
-
-  .contact-subtitle {
-    font-size: 16px;
-    line-height: normal;
-    text-align: center;
-  }
-
-  .contact-text-div {
-    text-align: center;
-    margin-top: 1.5rem;
-  }
-
-  .contact-detail,
-  .contact-detail-email {
-    font-size: 20px;
-  }
-
-  .contact-image-div {
-    display: none;
-  }
 }

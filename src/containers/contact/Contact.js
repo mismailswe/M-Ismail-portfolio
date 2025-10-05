@@ -3,7 +3,6 @@ import "./Contact.scss";
 import {contactInfo} from "../../portfolio";
 import {Fade} from "react-reveal";
 import emailjs from "@emailjs/browser";
-import SocialMedia from "../../components/socialMedia/SocialMedia";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Contact() {
@@ -122,7 +121,7 @@ export default function Contact() {
           </div>
 
           {/* Right Section - Contact Form */}
-          <div className="contact-form-section">
+          <div className={`contact-form-section ${isDark ? "dark-mode" : ""}`}>
             <form
               className="contact-form"
               onSubmit={handleSubmit}

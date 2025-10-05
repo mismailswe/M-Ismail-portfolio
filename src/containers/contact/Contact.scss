@@ -48,7 +48,7 @@
   font-family: inherit;
   line-height: 1;
   position: relative;
-  top: 5px;
+  top: 3px;
   left: 1px;
 }
 
@@ -102,14 +102,9 @@
 .contact-form-section {
   flex: 1;
   backdrop-filter: blur(10px);
-
-  // background-color: $darkBackground;
   padding: 1.5rem 0rem 1.5rem 1.5rem;
-  // border-radius: 10px;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
-  // box-shadow: $lightBoxShadow 0px 8px 25px -12px;
-  // border: 1px solid $lightBorder1;
   transition: transform 0.6s ease-in-out;
 }
 
@@ -138,19 +133,18 @@
   position: relative;
   display: flex;
   align-items: center;
-  background: #1e1e1e;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: $lightBackground1;
+  border: 1px solid $lightBorder1;
   border-radius: 10px;
   transition: all 0.3s ease;
 
   &:focus-within {
-    border-color: #6366f1;
-    background: #2a2a2a;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+    border-color: $buttonColor;
+    background: $lightBackground4;
   }
 
   &:hover {
-    border-color: rgba(255, 255, 255, 0.25);
+    border-color: $subTitle;
   }
 
   .input-icon {
@@ -158,7 +152,7 @@
     left: 1rem;
     width: 20px;
     height: 20px;
-    color: rgba(255, 255, 255, 0.45);
+    color: $subTitle;
     pointer-events: none;
     z-index: 1;
   }
@@ -168,13 +162,13 @@
     padding: 0.8rem 1rem 0.8rem 3rem;
     background: transparent;
     border: none;
-    color: #ffffff;
+    color: $textColor;
     font-size: 1rem;
     transition: all 0.3s ease;
     transform: none !important;
 
     &::placeholder {
-      color: rgba(255, 255, 255, 0.45);
+      color: $subTitle;
       font-size: 1rem;
     }
 
@@ -188,15 +182,15 @@
 .textarea-container {
   width: 100%;
   position: relative;
-  background: #2a2a2a;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: $lightBackground1;
+  border: 1px solid $lightBorder1;
   border-radius: 10px;
   transition: all 0.3s ease;
   overflow: hidden;
 
   &:focus-within {
     border-color: $buttonColor;
-    background: #333333;
+    background: $lightBackground3;
   }
 
   .form-textarea {
@@ -207,7 +201,7 @@
     padding-bottom: 2.5rem;
     background: transparent;
     border: none;
-    color: white;
+    color: $textColor;
     font-size: 1rem;
     font-family: inherit;
     resize: vertical;
@@ -215,7 +209,7 @@
     box-sizing: border-box;
 
     &::placeholder {
-      color: rgba(255, 255, 255, 0.4);
+      color: $subTitle;
       font-size: 1rem;
       font-weight: 500;
       font-family: inherit;
@@ -227,7 +221,7 @@
 
     // Style the resize handle
     &::-webkit-resizer {
-      background: rgba(255, 255, 255, 0.3);
+      background: $subTitle;
       border-radius: 0 0 10px 0;
     }
   }
@@ -398,6 +392,60 @@
     left: 0.875rem;
     width: 16px;
     height: 16px;
+  }
+}
+
+// Dark mode overrides
+.dark-mode {
+  .input-container {
+    background: $darkBackground;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    &:focus-within {
+      background: #2a2a2a;
+      border-color: $buttonColor;
+    }
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .input-icon {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .form-input {
+      color: #ffffff;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.45);
+      }
+    }
+  }
+
+  .textarea-container {
+    background: $darkBackground;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    &:focus-within {
+      background: #2a2a2a;
+    }
+
+    .form-textarea {
+      color: #ffffff;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      &::-webkit-resizer {
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+
+  .field-label {
+    color: #e5e5e5;
   }
 }
 

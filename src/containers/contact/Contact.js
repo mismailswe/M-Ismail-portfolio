@@ -1,8 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import "./Contact.scss";
 import {contactInfo} from "../../portfolio";
 import {Fade} from "react-reveal";
 import emailjs from "@emailjs/browser";
+import SocialMedia from "../../components/socialMedia/SocialMedia";
+import StyleContext from "../../contexts/StyleContext";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,7 +14,7 @@ export default function Contact() {
     message: "",
     privacyAccepted: false
   });
-
+  const {isDark} = useContext(StyleContext);
   const [isLoading, setIsLoading] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
 
@@ -84,18 +86,39 @@ export default function Contact() {
       <div className="main contact-margin-top" id="contact">
         <div className="contact-container">
           {/* Left Section - Contact Information */}
-          <div className="contact-info-section">
-            <button className="contact-us-button">Contact Us</button>
-            <h1 className="contact-main-title">Let's Get In Touch.</h1>
-            <p className="contact-alternative">
-              Or just reach out manually to{" "}
-              <a
-                href={`mailto:${contactInfo.email_address}`}
-                className="contact-email-link"
+
+          <div className="contact-div-main">
+            <div className="contact-header">
+              <h1 className="heading contact-title">{contactInfo.title}</h1>
+              <p
+                className={
+                  isDark
+                    ? "dark-mode contact-subtitle"
+                    : "subTitle contact-subtitle"
+                }
               >
-                {contactInfo.email_address}
-              </a>
-            </p>
+                {contactInfo.subtitle}
+              </p>
+              <div
+                className={
+                  isDark ? "dark-mode contact-text-div" : "contact-text-div"
+                }
+              >
+                <a
+                  className="contact-detail-email"
+                  href={"mailto:" + contactInfo.email_address}
+                >
+                  {contactInfo.email_address}
+                  {", "}
+                </a>
+                <a
+                  className="contact-detail"
+                  href={"tel:" + contactInfo.number}
+                >
+                  {contactInfo.number}
+                </a>{" "}
+              </div>
+            </div>
           </div>
 
           {/* Right Section - Contact Form */}

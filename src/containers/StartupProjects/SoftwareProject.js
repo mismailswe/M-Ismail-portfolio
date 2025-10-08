@@ -12,7 +12,7 @@ import StyleContext from "../../contexts/StyleContext";
 import {useMediaQuery} from "react-responsive";
 
 export default function SoftwareProject() {
-  const [currentProject, setCurrentProject] = useState(1);
+  const [currentProject, setCurrentProject] = useState(0);
   const [isDesktop, setIsDesktop] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isPaused, setIsPaused] = useState(false);

@@ -511,7 +511,53 @@ const softwareProjects = {
       image: require("./assets/images/rancher.png"),
       projectName: "Rancher Cafe",
       projectDesc:
-        "Rancher Cafe connects customers with Rancher Cafe branches that offer food delivery in their vicinity. Customers can browse the menus of available branches, send in food orders, and make payment accordingly"
+        "Rancher Cafe connects customers with Rancher Cafe branches that offer food delivery in their vicinity. Customers can browse the menus of available branches, send in food orders, and make payment accordingly",
+      footerLink: [
+        {
+          name: "View ranchers cafe",
+          url: "https://rancherscafe.com"
+        }
+      ]
+    },
+
+    {
+      Id: 3,
+      image: require("./assets/images/truebiddata.jpeg"),
+      projectName: "TrueBidData",
+      projectDesc:
+        "TrueBidData provides quantity takeoff and cost estimation services for construction projects, while also helping users prepare and manage competitive bids to streamline the bidding process and improve their chances of winning",
+      footerLink: [
+        {
+          name: "View truebiddata",
+          url: "https://truebiddata.com"
+        }
+      ]
+    },
+    {
+      Id: 5,
+      image: require("./assets/images/fastestimator.png"),
+      projectName: "FastEstimator",
+      projectDesc:
+        "FastEstimator provides takeoff and cost estimating services for construction projects, helping clients quantify materials and forecast expenses",
+      footerLink: [
+        {
+          name: "View fastestimator",
+          url: "https://fastestimator.com"
+        }
+      ]
+    },
+    {
+      Id: 4,
+      image: require("./assets/images/projut.png"),
+      projectName: "Projut",
+      projectDesc:
+        "Procure construction software streamlines project procurement and tender management, allowing clients, contractors, and consultants to collaborate on bids, RFQs, and contract awards in one digital platform for greater efficiency and transparency",
+      footerLink: [
+        {
+          name: "View projut",
+          url: "https://projut.rocksofttech.com"
+        }
+      ]
     },
     {
       Id: 2,
@@ -520,28 +566,6 @@ const softwareProjects = {
       projectDesc:
         "Dhartee PK is an innovative real estate portal enabling purchase and sale of property. You get matchless property viewing experience through 360 interactive panoramic photos and virtual tours"
     },
-    {
-      Id: 3,
-      image: require("./assets/images/truebiddata.jpeg"),
-      projectName: "TrueBidData",
-      projectDesc:
-        "Responsive website and platform for TrueBidData — implemented frontend components, REST APIs, and data-visualization dashboards with integrations for third-party services."
-    },
-    {
-      Id: 5,
-      image: require("./assets/images/fastestimator.png"),
-      projectName: "FastEstimator",
-      projectDesc:
-        "Documentation/demo site and example integrations for FastEstimator — includes model training pipelines, example notebooks, and automated CI deployment of docs and examples."
-    },
-    {
-      Id: 4,
-      image: require("./assets/images/projut.png"),
-      projectName: "Projut",
-      projectDesc:
-        "Web application for Projut featuring project and quotation workflows, user & role management, dashboard reporting, and secure API endpoints for integrations."
-    },
-
     {
       Id: 6,
       image: require("./assets/images/bodyslide.png"),
@@ -561,14 +585,14 @@ const softwareProjects = {
       image: require("./assets/images/parking.png"),
       projectName: "SpotTroop",
       projectDesc:
-        "A parking reservation website in Germany, Spot Troop simplifies the process for drivers to discover and book parking spots in advance within their vicinity"
+        "A parking reservation website in Germany, Spot Troop simplifies the process for drivers to discover and book parking spots in advance within their vicinity, while also offering real-time availability tracking, digital payments, navigation assistance, and parking history management for a seamless parking experience"
     },
     {
       Id: 9,
-      image: require("./assets/images/propertySite.png"),
-      projectName: "Property Management",
+      image: require("./assets/images/autohub_pos.png"),
+      projectName: "Autohub pos",
       projectDesc:
-        "Streamline property management with a unified platform, empowering landlords and property managers to effortlessly track and manage properties, tenants, leases, and payments"
+        "A pos system manages sales transactions, billing, and payment processing for retail or service businesses. It also handles inventory tracking, customer management, reporting, and staff control to streamline daily operations and improve business efficiency"
     },
 
     {

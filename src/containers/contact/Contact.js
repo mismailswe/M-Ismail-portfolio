@@ -86,13 +86,13 @@ export default function Contact() {
         <div className="contact-container">
           {/* Left Section - Contact Information */}
 
-          <div className="contact-div-main">
+          <div className="contact-div-main ">
             <div className="contact-header">
               <h1 className="heading contact-title">{contactInfo.title}</h1>
               <p
                 className={
                   isDark
-                    ? "dark-mode contact-subtitle"
+                    ? "dark-mode contact-subtitle "
                     : "subTitle contact-subtitle"
                 }
               >

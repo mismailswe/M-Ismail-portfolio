@@ -11,17 +11,22 @@
   gap: 4rem;
   align-items: center;
 }
+.contact-div-main {
+  flex: 1;
+}
 .contact-title {
-  font-size: 38px;
+  font-size: 56px;
   font-weight: 400;
 }
 .contact-subtitle {
+  font-size: 30px;
+  line-height: 37px;
   text-transform: none;
 }
 .contact-detail,
 .contact-detail-email {
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 30px;
   font-weight: 400;
   color: $subTitle;
   text-decoration: none;

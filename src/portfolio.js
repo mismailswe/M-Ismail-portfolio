@@ -64,7 +64,7 @@ const greeting = {
   username: "Muhammad Ismail",
   title: "Hi all, I'm Ismail",
   subTitle: (
-    <Emoji text="A dynamic Full Stack Software Engineer with proven expertise in DevOps and Data Science/AI. I specialize in designing and delivering robust systems that integrate modern software development with intelligent, data-driven innovation" />
+    <Emoji text="A dynamic Software Engineer with proven expertise in DevOps and Data Science/AI. I specialize in designing and delivering robust systems that integrate modern software development with intelligent, data-driven innovation" />
   ),
   resumeLink:
     "https://drive.google.com/drive/folders/1xZ5FCYhLX81S8znQ8AouZWX42naGQsjc?usp=sharing",
@@ -374,9 +374,9 @@ const educationInfo = {
       logo: require("./assets/images/Riphah-Logo.jpg"),
       subHeader: "Master of Science in Computer Software engineering",
       duration: "04 Sep 2023 - 07 Jul 2025",
-      desc: "Pursuing advanced studies in Software Engineering with a focus on cutting-edge technologies and research.",
+      desc: "Completed my advanced studies in Software Engineering with a focus on cutting-edge technologies and research.",
       descBullets: [
-        "In-depth exploration of advanced topics such as Software Architecture, Cloud Computing, DevOps, Natural Language Processing",
+        "In-depth exploration of advanced topics such as Software Architecture, Cloud Computing, LLM, ML, NLP, and Data Science",
         "Researching and applying innovative software development methodologies such as agile, DevOps",
         "Building a solid understanding of Blockchain, Docker, and Kubernetes, laying the groundwork for their practical application in upcoming projects"
       ]
@@ -385,7 +385,7 @@ const educationInfo = {
       schoolName: "University of Engineering & Technology Mardan",
       logo: require("./assets/images/harvardLogo.png"),
       subHeader: "Bachelor of Science in Computer Software engineering",
-      duration: "June 2017 - June 2021",
+      duration: "June 2018 - June 2022",
       desc: "Completed a comprehensive curriculum covering Software Engineering, Web Security, Operating Systems, Computer Communication Networks, and Database Management.",
       descBullets: [
         "Developed strong problem-solving and critical-thinking skills through hands-on projects and real-world applications.",
@@ -393,18 +393,6 @@ const educationInfo = {
         "Demonstrated a deep understanding of Web Security principles, implementing secure coding practices in software projects."
       ]
     }
-    // {
-    //   schoolName: "Oxford College of science & technology Munda Dir",
-    //   logo: require("./assets/images/stanfordLogo.png"),
-    //   subHeader: " Intermediate in Computer Science",
-    //   duration: "July 2015 - July 2017",
-    //   desc: "Took courses about Computer fundamental, programming and other science subjects",
-    //   descBullets: [
-    //     "Built a solid understanding of computer fundamentals, including hardware, software, and basic networking concepts.",
-    //     "Developed programming skills in c, c++ & javascript languages.",
-    //     "Successfully completed coursework covering key science subjects, expanding my knowledge base."
-    //   ]
-    // }
   ]
 };
 
@@ -443,17 +431,18 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Senior MERN Stack Developer",
-      company: "Koncept solutions",
-      companylogo: require("./assets/images/koncept_solutions_international_logo.jpeg"),
+      role: "Team Lead - Software Engineering",
+      company: "Rocksoft Tech",
+      companylogo: require("./assets/images/rocksoft_tech_logo.png"),
       date: "Jan 2024 – Present",
-      desc: "Bringing innovation to existing projects and actively contributing to the expansion of Koncept Solutions' portfolio as a Senior MERN Stack Developer and Team Lead.",
+      desc: "Leading development and delivery for TrueBidData, FastEstimator and the Projut system —  platforms for US/UK markets",
       descBullets: [
-        "Introducing new features to existing projects like KBD, BHM, and Swathy_Autos for continuous improvement",
-        "Actively involved in the creation and development of new projects, contributing to Koncept Solutions' expanding portfolio",
-        "Bringing innovation to web development projects, ensuring high-quality solutions and optimal user experiences"
+        "Lead end-to-end development for truebiddata.com, fastestimator.com (construction bidding platforms) and Projut (procurement & project-management system)",
+        "Lead and mentor the engineering team, oversee architecture reviews, and drive sprint planning and code quality",
+        "Work with stakeholders and product owners to deliver stable releases and continuous improvements"
       ]
     },
+
     {
       role: "MERN Stack Developer",
       company: "Codistan Ventures",

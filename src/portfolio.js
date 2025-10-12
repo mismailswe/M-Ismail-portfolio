@@ -644,7 +644,7 @@ const aiProjects = {
     },
     {
       Id: 7,
-      image: require("./assets/images/credit_scoring.jpg"),
+      image: require("./assets/images/credit_scoring.png"),
       projectName: "Credit Scoring Model",
       projectDesc:
         "Risk-scoring model using logistic regression and tree-based methods for loan default prediction. Includes model monitoring, fairness checks, and explainability reports for compliance."

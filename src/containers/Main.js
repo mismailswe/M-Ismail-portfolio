@@ -28,11 +28,22 @@ export default class Main extends Component {
       const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
       localStorage.setItem("isDark", darkPref.matches);
     }
-    this.setState({isDark: JSON.parse(localStorage.getItem("isDark"))});
+    this.setState({isDark: JSON.parse(localStorage.getItem("isDark"))}, () => {
+      this.updateBodyTheme();
+    });
   }
+
+  updateBodyTheme = () => {
+    const body = document.body;
+    // Remove existing theme classes
+    body.classList.remove("light-theme", "dark-theme");
+    // Add appropriate theme class
+    body.classList.add(this.state.isDark ? "dark-theme" : "light-theme");
+  };
   changeTheme = () => {
     this.setState({isDark: !this.state.isDark}, () => {
       localStorage.setItem("isDark", this.state.isDark);
+      this.updateBodyTheme();
     });
   };
 

@@ -5,6 +5,9 @@
   margin: 0px auto;
   margin-top: 12px;
 }
+.achievement-main-div {
+  margin-top: -16px;
+}
 .achievement-heading {
   font-size: 56px;
   font-weight: 400;
@@ -27,6 +30,9 @@
   }
 }
 @media (max-width: 768px) {
+  .achievement-main-div {
+    margin-top: 50px !important;
+  }
   .achievement-heading {
     font-size: 30px;
     text-align: center;

@@ -62,9 +62,9 @@ const illustration = {
 
 const greeting = {
   username: "Muhammad Ismail",
-  title: "Hi all, I'm Ismail",
+  title: "Hi all, I'm M. Ismail",
   subTitle: (
-    <Emoji text="A dynamic Software Engineer with proven expertise in DevOps and Data Science/AI. I specialize in designing and delivering robust systems that integrate modern software development with intelligent, data-driven innovation" />
+    <Emoji text="A dynamic Software Engineer with proven expertise in Data Science & ML. I specialize in designing and delivering robust systems that integrate modern software development with intelligent, data-driven innovation" />
   ),
   resumeLink:
     "https://drive.google.com/drive/folders/1xZ5FCYhLX81S8znQ8AouZWX42naGQsjc?usp=sharing",

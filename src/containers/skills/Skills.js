@@ -13,7 +13,14 @@ export default function Skills() {
     return null;
   }
   return (
-    <div className={isDark ? "dark-mode main" : "main"} id="skills">
+    <div
+      className={
+        isDark
+          ? "dark-mode main skills-category-section"
+          : "main skills-category-section"
+      }
+      id="skills"
+    >
       <div className="skills-main-div">
         <SoftwareSkill />
       </div>

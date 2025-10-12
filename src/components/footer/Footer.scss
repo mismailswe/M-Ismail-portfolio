@@ -13,3 +13,9 @@
   margin-top: 2rem;
   padding-bottom: 1rem;
 }
+
+@media (max-width: 768px) {
+  .footer-div {
+    margin-top: 0rem;
+  }
+}

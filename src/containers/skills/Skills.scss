@@ -55,7 +55,9 @@
 
     @media (max-width: 600px) {
       // Mobile breakpoint
-      margin-top: -100px;
+      // margin-top: -100px;
+      margin-top: 0px;
+
       margin-left: 0px; // Ensuring this rule is maintained for mobile as well
     }
   }

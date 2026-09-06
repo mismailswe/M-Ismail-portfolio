@@ -1,11 +1,7 @@
-/* Change this file to get your personal Portfolio */
-
-// To change portfolio colors globally go to the  _globalColor.scss file
-
-// Summary And Greeting Section
-import React from "react";
-import emoji from "react-easy-emoji";
-import Emoji from "react-emoji-render";
+/* Central content for the academic portfolio.
+ * Update publications, research interests and profile details here.
+ * Visual tokens live in styles/globals.css. Original project archives are retained.
+ */
 
 // svg's imports
 import reactjs from "./assets/images/react.svg";
@@ -56,19 +52,44 @@ import openai from "./assets/images/openai.svg";
 import ollama from "./assets/images/ollama.svg";
 import huggingface from "./assets/images/huggingface.svg";
 import ocr from "./assets/images/ocr.svg";
-const illustration = {
-  animated: true // set to false to use static SVG
-};
-
 const greeting = {
   username: "Muhammad Ismail",
-  title: "Hi all, I'm M. Ismail",
-  subTitle: (
-    <Emoji text="A dynamic Software Engineer with proven expertise in Data Science & ML. I specialize in designing and delivering robust systems that integrate modern software development with intelligent, data-driven innovation" />
-  ),
+  name: "Muhammad Ismail",
+  firstLine: "Research · Engineering · Open science",
+  roles: ["Researcher & Software Engineer"],
+  tagline:
+    "I study how intelligent systems remember, reason, and remain reliable — connecting empirical research in language models with the engineering of secure, real-world systems.",
+  location: "Islamabad, Pakistan",
+  availability: "Open to research collaborations",
   resumeLink:
     "https://drive.google.com/drive/folders/1xZ5FCYhLX81S8znQ8AouZWX42naGQsjc?usp=sharing",
   displayGreeting: true // Set false to hide this section, defaults to true
+};
+
+// Numbers shown in the hero / about strip
+const statsSection = {
+  display: true,
+  stats: [
+    {value: 5, suffix: "+", label: "Years building software"},
+    {value: 25, suffix: "+", label: "Products shipped"},
+    {value: 3, suffix: "", label: "Peer-reviewed papers"},
+    {value: 10, suffix: "+", label: "Engineers mentored"}
+  ]
+};
+
+// About section copy
+const aboutSection = {
+  display: true,
+  title: "About me",
+  paragraphs: [
+    "My research spans memory for large language model agents, the convergence of AI and blockchain, and security in connected healthcare systems. I am particularly interested in the conditions under which a more complex architecture provides a measurable benefit.",
+    "I hold an MS in Computer Software Engineering from Riphah International University, Islamabad. Alongside my research, I lead software engineering at Rocksoft Tech, bringing experience in system architecture, implementation, and evaluation to my research practice."
+  ],
+  highlights: [
+    "Empirical evaluation",
+    "Reproducible experiments",
+    "Research to implementation"
+  ]
 };
 
 // Social Media Links
@@ -89,13 +110,41 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
+  subtitle:
+    "Six things I get asked for most — and the stacks I reach for to deliver them.",
   // subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE DIFFERENT TECH",
+  // "What I do" cards — `icon` maps to a key in sections/About.js
   skills: [
-    <Emoji text="⚡ Build responsive and interactive user interfaces for web and mobile applications" />,
-    <Emoji text="⚡ Design and implement scalable backend systems and APIs" />,
-    <Emoji text="⚡ Work with relational, non-relational, and cloud databases for efficient data management" />,
-    <Emoji text="⚡ Deploy and manage applications using cloud platforms, containers, and CI/CD pipelines" />,
-    <Emoji text="⚡ Apply data science, machine learning, and AI techniques for intelligent solutions" />
+    {
+      icon: "layout",
+      title: "Interfaces that feel fast",
+      text: "Responsive, accessible web and mobile front-ends built with React, Next.js and React Native."
+    },
+    {
+      icon: "server",
+      title: "Backends that scale",
+      text: "Well-structured APIs and services in Node.js, NestJS, Django and FastAPI, designed for real traffic."
+    },
+    {
+      icon: "database",
+      title: "Data modelled properly",
+      text: "Relational, document and cloud data stores tuned for the queries the product actually makes."
+    },
+    {
+      icon: "cloud",
+      title: "Shipped and observable",
+      text: "Containerised deployments on AWS, Azure and GCP with CI/CD pipelines and monitoring in place."
+    },
+    {
+      icon: "brain",
+      title: "ML where it earns its place",
+      text: "Forecasting, NLP, computer vision and LLM-powered features taken from notebook to production."
+    },
+    {
+      icon: "users",
+      title: "Teams that ship",
+      text: "Architecture reviews, sprint planning and mentoring that keep delivery predictable and code healthy."
+    }
   ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
@@ -372,9 +421,9 @@ const educationInfo = {
     {
       schoolName: "Riphah International University Islamabad",
       logo: require("./assets/images/Riphah-Logo.jpg"),
-      subHeader: "Master of Science in Computer Software engineering",
+      subHeader: "Master of Science in Computer Software Engineering",
       duration: "04 Sep 2023 - 07 Jul 2025",
-      desc: "Completed my advanced studies in Software Engineering with a focus on cutting-edge technologies and research.",
+      desc: "Graduate study in software engineering, including software architecture, cloud computing, language models, machine learning, NLP, and data science.",
       descBullets: [
         "In-depth exploration of advanced topics such as Software Architecture, Cloud Computing, LLM, ML, NLP, and Data Science",
         "Researching and applying innovative software development methodologies such as agile, DevOps",
@@ -384,7 +433,7 @@ const educationInfo = {
     {
       schoolName: "University of Engineering & Technology Mardan",
       logo: require("./assets/images/harvardLogo.png"),
-      subHeader: "Bachelor of Science in Computer Software engineering",
+      subHeader: "Bachelor of Science in Computer Software Engineering",
       duration: "June 2018 - June 2022",
       desc: "Completed a comprehensive curriculum covering Software Engineering, Web Security, Operating Systems, Computer Communication Networks, and Database Management.",
       descBullets: [
@@ -481,11 +530,6 @@ const workExperiences = {
       ]
     }
   ]
-};
-
-const openSource = {
-  showGithubProfile: "true", // Set true or false to show Contact profile using Github, defaults to true
-  display: true // Set false to hide this section, defaults to true
 };
 
 // Some big industry projects
@@ -653,8 +697,8 @@ const aiProjects = {
   display: true // Set false to hide this section, defaults to true
 };
 
-// Some big projects you have worked on
-
+// Personal projects. Not rendered by default — add another
+// <Projects data={bigProjects} .../> in containers/Main.js to show them.
 const bigProjects = {
   title: "Personal Projects",
   subtitle: "Some of the personal projects that, I have worked so far",
@@ -713,142 +757,352 @@ const bigProjects = {
   // display: true // Set false to hide this section, defaults to true
 };
 
-// Achievement Section
-// Include certificates, talks etc
+// Achievement Section — certifications synced from LinkedIn profile.
+// Run `npm run build` with USE_LINKEDIN_DATA=true to refresh via Apify,
+// or edit `public/linkedin-certifications.json` directly.
 
 const achievementSection = {
-  title: <Emoji text="Achievements And Certifications 🏆 " />,
+  display: true,
+  title: "Achievements & Certifications",
   subtitle:
-    "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
-
-  achievementsCards: [
+    "Licenses and certifications from my LinkedIn profile — AI, data science, and professional credentials.",
+  profileUrl: socialMediaLinks.linkedin,
+  certifications: [
     {
-      title: "Codistan venture experience certifcate ",
-      subtitle:
-        "At Codistan Venture, I served as a MERN stack developer, contributing actively for 1.5 years. This experience was pivotal in advancing my proficiency in web development, fostering my growth within the software industry",
-      image: require("./assets/images/codistan.png"),
-      footerLink: [
-        {
-          name: "View Certification",
-          url: "https://drive.google.com/file/d/1qNOZn9Xs3HNMi89t2Zze6_kTwi7yKisE/view?usp=sharing"
-        }
-      ]
+      id: "ai-foundations-ml",
+      title: "Artificial Intelligence Foundations: Machine Learning",
+      issuer: "LinkedIn",
+      issuedDate: "2026-02",
+      credentialUrl:
+        "https://www.linkedin.com/learning/certificates/f2dfd55c24e68759ce6454e600289362f4d67c4ade03e87376b02137b39cff63",
+      logoUrl: "https://logo.clearbit.com/linkedin.com"
     },
     {
-      title: "Grey-software house certifcate ",
-      subtitle:
-        "I began my career as a ReactJS and Node.js developer at Grey Software House, where I gained foundational skills and hands-on experience in frontend and backend development. This role laid a strong foundation for my career in software engineering",
-      image: require("./assets/images/facebookLogo.png"),
-      footerLink: [
-        {
-          name: "View Certification",
-          url: "https://drive.google.com/file/d/1P1SjJVh_1Pas0acNSvq1fk_uY2YvL4cS/view?usp=sharing"
-        }
-      ]
+      id: "data-literacy",
+      title: "Data Literacy: Exploring and Describing Data",
+      issuer: "LinkedIn",
+      issuedDate: "2026-02",
+      credentialUrl:
+        "https://www.linkedin.com/learning/certificates/dab4ef46889dcf8a99e58fbfebdb317300793213cbc00f35bb7293d7fbce91ea",
+      logoUrl: "https://logo.clearbit.com/linkedin.com"
     },
     {
-      title: "AWS Certificates",
-      subtitle:
-        "Successfully earned four AWS certificates through Coursera courses, showcasing proficiency in cloud computing",
-      image: require("./assets/images/aws-pic.png"),
-      footerLink: [
-        {
-          name: "View Certification",
-          url: "https://drive.google.com/drive/folders/18vRaOIGojA-b2TgPlIig4OPEk_uDaDDG?usp=sharing"
-        }
-      ]
+      id: "data-science-foundations",
+      title: "Data Science Foundations: Fundamentals",
+      issuer: "LinkedIn",
+      issuedDate: "2026-02",
+      credentialUrl:
+        "https://www.linkedin.com/learning/certificates/8d0b20fc5baad7fd20ca07a4a09e071a9f0fc884743d12df37ecb4538b8d7e3a",
+      logoUrl: "https://logo.clearbit.com/linkedin.com"
+    },
+    {
+      id: "ml-python-decision-trees",
+      title: "Machine Learning with Python: Decision Trees",
+      issuer: "LinkedIn",
+      issuedDate: "2026-02",
+      credentialUrl:
+        "https://www.linkedin.com/learning/certificates/b9e276d516d81f440f8267bd3669a05a5d7184b03bea108317088c4e0e7ff29d",
+      logoUrl: "https://logo.clearbit.com/linkedin.com"
+    },
+    {
+      id: "ml-python-foundations",
+      title: "Machine Learning with Python: Foundations",
+      issuer: "LinkedIn",
+      issuedDate: "2026-02",
+      credentialUrl:
+        "https://www.linkedin.com/learning/certificates/0440f32cccef0cbdd3fa770530c760972b87b586a3b08c7a46f126cf0ed97375",
+      logoUrl: "https://logo.clearbit.com/linkedin.com"
+    },
+    {
+      id: "statistics-foundations-1",
+      title: "Statistics Foundations 1: The Basics",
+      issuer: "LinkedIn",
+      issuedDate: "2026-02",
+      credentialUrl:
+        "https://www.linkedin.com/learning/certificates/78541eaa0ba199bbb61833d67309a6ad6ed85bcc52edfd9326f4bbffc5dd832f",
+      logoUrl: "https://logo.clearbit.com/linkedin.com"
+    },
+    {
+      id: "statistics-foundations-2",
+      title: "Statistics Foundations 2: Probability",
+      issuer: "LinkedIn",
+      issuedDate: "2026-02",
+      credentialUrl:
+        "https://www.linkedin.com/learning/certificates/4de10dd2fa42a053609e0d6d3b5aa7ab288d2e8fe8f3e483befd7f7eb5841b",
+      logoUrl: "https://logo.clearbit.com/linkedin.com"
+    },
+    {
+      id: "duolingo-english",
+      title: "English Proficiency Certificate",
+      issuer: "Duolingo English Test",
+      issuedDate: "2026-01",
+      expiresDate: "2027-07",
+      credentialUrl:
+        "https://www.linkedin.com/in/muhammad-ismail-72681b177/details/certifications/",
+      logoUrl: "https://logo.clearbit.com/duolingo.com"
     }
-  ],
-  display: true // Set false to hide this section, defaults to true
+  ]
 };
 
-// Blogs Section
+// Research & Publications Section
+// Append new entries to `publications` to add future papers.
 
-const blogSection = {
-  title: "Blogs",
+const researchSection = {
+  display: true,
+  title: "Publications",
   subtitle:
-    "With Love for Developing cool stuff, I love to write and teach others what I have learnt.",
-
-  blogs: [
+    "Published work in language model memory, AI, and secure connected systems.",
+  profileLinks: [
     {
-      url: "https://blog.usejournal.com/create-a-google-assistant-action-and-win-a-google-t-shirt-and-cloud-credits-4a8d86d76eae",
-      title: "Win a Google Assistant Tshirt and $200 in Google Cloud Credits",
-      description:
-        "Do you want to win $200 and Google Assistant Tshirt by creating a Google Assistant Action in less then 30 min?"
+      label: "Google Scholar",
+      url: "https://scholar.google.com/citations?user=7FUk17EAAAAJ&hl=en",
+      ariaLabel: "View Muhammad Ismail on Google Scholar"
     },
     {
-      url: "https://medium.com/@saadpasta/why-react-is-the-best-5a97563f423e",
-      title: "Why REACT is The Best?",
-      description:
-        "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
-    }
-  ],
-  display: true // Set false to hide this section, defaults to true
-};
-
-// Talks Sections
-
-const talkSection = {
-  title: "TALKS",
-  subtitle: emoji(
-    "I LOVE TO SHARE MY LIMITED KNOWLEDGE AND GET A SPEAKER BADGE 😅"
-  ),
-
-  talks: [
+      label: "ORCID",
+      url: "https://orcid.org/0009-0004-6319-9018",
+      ariaLabel: "View Muhammad Ismail on ORCID"
+    },
     {
-      title: "Build Actions For Google Assistant",
-      subtitle: "Codelab at GDG DevFest Karachi 2019",
-      slides_url: "https://bit.ly/saadpasta-slides",
-      event_url: "https://www.facebook.com/events/2339906106275053/"
+      label: "GitHub",
+      url: "https://github.com/mismailswe",
+      ariaLabel: "View Muhammad Ismail on GitHub"
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  publications: [
+    {
+      id: "hygram",
+      year: 2026,
+      featured: true,
+      title:
+        "When Does Graph-Structured Memory Help Multi-Session LLM Agents? An Empirical Study of HyGRAM, A Hybrid Graph\u2013Vector Memory Architecture",
+      authors: "Muhammad Ismail, Azeem Akram",
+      venue:
+        "Spectrum of Engineering Sciences, Vol. 4, Issue 6, pp. 2901\u20132914 (2026)",
+      roleBadge: "First Author",
+      description:
+        "An empirical study of hybrid graph\u2013vector memory architectures for multi-session LLM agents, with fully reproducible open-source code and a calibrated negative finding.",
+      links: [
+        {
+          label: "View Paper",
+          url: "https://thesesjournal.com/index.php/1/article/view/3354"
+        },
+        {
+          label: "Code (GitHub)",
+          url: "https://github.com/mismailswe/HyGRAM"
+        }
+      ],
+      tags: ["LLM Agents", "RAG", "Knowledge Graphs", "Reproducible Research"]
+    },
+    {
+      id: "blockchain-ai-iot",
+      year: 2025,
+      featured: false,
+      title:
+        "Exploring the Potential of Blockchain and AI Convergence to Secure and Verify IoT Data Transmissions in High-Stakes Industries",
+      authors: "Muhammad Ismail et al.",
+      venue:
+        "Spectrum of Engineering Sciences, Vol. 3, Issue 5, pp. 447\u2013467 (2025)",
+      roleBadge: "First & Corresponding Author",
+      description:
+        "Research on converging blockchain and AI to secure and verify IoT data transmissions in healthcare and finance.",
+      links: [
+        {
+          label: "View Paper",
+          url: "https://doi.org/10.5281/zenodo.15429512"
+        }
+      ],
+      tags: ["Blockchain", "AI Security", "IoT"]
+    },
+    {
+      id: "iot-healthcare",
+      year: 2025,
+      featured: false,
+      title: "Securing IoT Devices in Healthcare: Challenges and Solutions",
+      authors: "Azeem Akram, Muhammad Ismail et al.",
+      venue:
+        "Spectrum of Engineering Sciences, Vol. 3, Issue 5, pp. 133\u2013142 (2025)",
+      roleBadge: "Co-Author",
+      description:
+        "Analysis of security vulnerabilities and protective mechanisms for IoT devices in healthcare settings.",
+      links: [
+        {
+          label: "View Paper",
+          url: "https://doi.org/10.5281/zenodo.15348564"
+        }
+      ],
+      tags: ["IoT Security", "Healthcare"]
+    }
+  ]
 };
 
-// Podcast Section
+// LinkedIn Posts Section — latest posts shown on the site.
+// Update `public/linkedin-posts.json` or the posts array below to refresh content.
 
-const podcastSection = {
-  title: emoji("Podcast 🎙️"),
-  subtitle: "I LOVE TO TALK ABOUT MYSELF AND TECHNOLOGY",
-
-  // Please Provide with Your Podcast embeded Link
-  podcast: [
-    "https://anchor.fm/codevcast/embed/episodes/DevStory---Saad-Pasta-from-Karachi--Pakistan-e9givv/a-a15itvo"
-  ],
-  display: true // Set false to hide this section, defaults to true
+const linkedinSection = {
+  display: true,
+  title: "Latest on LinkedIn",
+  subtitle:
+    "Thoughts on AI engineering, research, and building reliable software systems.",
+  profileUrl: socialMediaLinks.linkedin,
+  posts: [
+    {
+      id: "hygram-paper",
+      date: "2026-06-29",
+      text: 'I am excited to share my latest research paper titled "When Does Graph-Structured Memory Help Multi-Session LLM Agents? An Empirical Study of HyGRAM."\n\nThis research addresses whether incorporating a knowledge graph into an LLM agent enhances memory retention during long conversations. I built and evaluated HyGRAM, a hybrid graph-vector memory architecture, on the LoCoMo benchmark — with fully reproducible open-source results.',
+      url: "https://www.linkedin.com/posts/muhammad-ismail-72681b177_when-does-graph-structured-memory-help-multi-session-activity-7477453204197265408-AowP",
+      reactions: 6,
+      comments: 1,
+      tags: ["LLM", "AgenticAI", "Research", "KnowledgeGraphs"]
+    },
+    {
+      id: "nla-gpt2",
+      date: "2026-06-20",
+      text: "I recently rebuilt Anthropic's Natural Language Autoencoders (NLA) research method — scaled down to GPT-2 Small and trained on a free Google Colab GPU in 25 minutes. A complete activation-to-text-to-activation pipeline, open and reproducible.",
+      url: "https://www.linkedin.com/posts/muhammad-ismail-72681b177_github-mismailswenla-gpt2-reimplementation-activity-7473985445434060800-zDdZ",
+      reactions: 3,
+      tags: ["MechanisticInterpretability", "NLP", "AIResearch", "LLM"]
+    },
+    {
+      id: "ai-systems",
+      date: "2026-05-24",
+      text: "Most people think AI products fail because of the model. In reality, many fail because of weak context engineering, poor retrieval pipelines, bad prompt structure, and no evaluation strategy. The model is only one part of the system.",
+      url: "https://www.linkedin.com/posts/muhammad-ismail-72681b177_ai-machinelearning-llm-activity-7464353866575134720-Oqse",
+      reactions: 3,
+      tags: ["AI", "RAG", "SoftwareEngineering", "GenerativeAI"]
+    },
+    {
+      id: "blockchain-ai-iot",
+      date: "2025-05-18",
+      text: 'Published another research paper: "Exploring Blockchain and AI Convergence to Secure IoT Data in Healthcare and Finance." It highlights how AI and blockchain can work together to ensure secure, verified data transmission in critical sectors.',
+      url: "https://www.linkedin.com/posts/muhammad-ismail-72681b177_exploring-the-potential-of-block-chain-and-activity-7329909753306939393-uzg1",
+      reactions: 8,
+      tags: ["Blockchain", "AI", "IoT", "Research"]
+    },
+    {
+      id: "iot-healthcare",
+      date: "2025-05-09",
+      text: 'Excited to share my recent publication: "Securing IoT Devices in Healthcare: Challenges and Solutions." This MS research focuses on security challenges and practical solutions for safeguarding IoT devices in healthcare.',
+      url: "https://www.linkedin.com/posts/muhammad-ismail-72681b177_view-of-securing-iot-devices-in-healthcare-activity-7326490665414975488-aBZl",
+      reactions: 5,
+      comments: 2,
+      tags: ["IoT", "Healthcare", "Cybersecurity", "Research"]
+    }
+  ]
 };
 
 const contactInfo = {
-  title: <Emoji text="Contact Me ☎️" />,
+  title: "Contact Me",
   subtitle:
-    "Discuss a project or just want to say hi? My Inbox is open for all.",
+    "For research collaborations, questions about my papers, or opportunities at the intersection of AI research and engineering.",
   number: "+923029463719",
   email_address: "m.ismail.swe@gmail.com"
 };
 
-// Twitter Section
+// Academic presentation uses the verified records above; add affiliations only
+// when confirmed. No PhD enrollment, citation counts or awards are inferred.
+const academicProfile = {
+  degree: "MS, Computer Software Engineering",
+  institution: "Riphah International University",
+  interests: [
+    {
+      title: "Language model memory",
+      description:
+        "Graph–vector memory, retrieval-augmented generation, and evaluation of multi-session LLM agents.",
+      keywords: "LLM agents / RAG / Knowledge graphs"
+    },
+    {
+      title: "Interpretability & evaluation",
+      description:
+        "Reproducing research methods and examining what model representations reveal about system behavior.",
+      keywords: "Model representations / Reproducibility"
+    },
+    {
+      title: "Secure intelligent systems",
+      description:
+        "AI and blockchain for data integrity, with a focus on IoT and connected healthcare systems.",
+      keywords: "AI security / Blockchain / IoT"
+    }
+  ],
+  updates: [
+    {
+      date: "2026-06",
+      label: "June 2026",
+      text: "HyGRAM: an empirical study of graph-structured memory for multi-session LLM agents.",
+      href: "#publication-hygram",
+      type: "Publication"
+    },
+    {
+      date: "2026-06",
+      label: "June 2026",
+      text: "Reimplemented natural language autoencoders on GPT-2 Small.",
+      href: linkedinSection.posts.find(post => post.id === "nla-gpt2").url,
+      type: "Research software"
+    },
+    {
+      date: "2025-07",
+      label: "July 2025",
+      text: "Completed my MS in Computer Software Engineering at Riphah International University.",
+      href: "#education",
+      type: "Education"
+    }
+  ]
+};
 
-const twitterDetails = {
-  userName: "twitter", //Replace "twitter" with your twitter username without @
-  display: true // Set true to display this section, defaults to false
+const researchProjects = {
+  display: true,
+  title: "Research software",
+  subtitle:
+    "Implementations that connect research questions with working experiments.",
+  projects: [
+    {
+      Id: "hygram",
+      projectName: "HyGRAM",
+      category: "Language model memory",
+      projectDesc:
+        "A hybrid graph–vector memory architecture for multi-session LLM agents. The implementation accompanies an empirical study with reproducible experiments and a calibrated negative finding.",
+      tags: ["LLM agents", "Graph–vector retrieval", "Evaluation"],
+      footerLink: [
+        {name: "Repository", url: researchSection.publications[0].links[1].url},
+        {
+          name: "Read the paper",
+          url: researchSection.publications[0].links[0].url
+        }
+      ]
+    },
+    {
+      Id: "nla-gpt2",
+      projectName: "Natural language autoencoders",
+      category: "Mechanistic interpretability",
+      projectDesc:
+        "A reimplementation of the natural language autoencoder method using GPT-2 Small: an activation-to-text-to-activation pipeline designed to make the experiment accessible on a free Colab GPU.",
+      tags: ["GPT-2", "Model representations", "Reimplementation"],
+      footerLink: [
+        {
+          name: "Implementation notes",
+          url: linkedinSection.posts.find(post => post.id === "nla-gpt2").url
+        }
+      ]
+    }
+  ]
 };
 
 export {
+  academicProfile,
+  researchProjects,
   softwareProjects,
+  statsSection,
+  aboutSection,
+  researchSection,
   aiProjects,
-  illustration,
   greeting,
   socialMediaLinks,
   skillsSection,
   educationInfo,
   techStack,
   workExperiences,
-  openSource,
   bigProjects,
   achievementSection,
-  blogSection,
-  talkSection,
-  podcastSection,
-  contactInfo,
-  twitterDetails
+  linkedinSection,
+  contactInfo
 };

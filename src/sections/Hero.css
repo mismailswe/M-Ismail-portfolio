@@ -1,0 +1,226 @@
+.hero {
+  padding: 46px 0 0;
+  border-bottom: 1px solid var(--border);
+}
+.hero__topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 45px;
+}
+.hero__location {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.hero__location svg {
+  width: 12px;
+  height: 12px;
+}
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: clamp(45px, 8vw, 110px);
+  align-items: center;
+  padding-bottom: 48px;
+}
+.hero h1 {
+  font-size: clamp(54px, 6vw, 78px);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
+.hero h1 span {
+  color: var(--c1);
+}
+.hero__role {
+  font-size: 18px;
+  letter-spacing: 0.015em;
+  margin-top: 22px;
+  color: var(--c1);
+}
+.hero__text {
+  max-width: 540px;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-top: 18px;
+  color: var(--text-2);
+}
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+.hero__profiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 30px;
+}
+.hero__profiles a {
+  display: inline-flex;
+  white-space: nowrap;
+  gap: 6px;
+  align-items: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+.hero__profiles a:hover {
+  color: var(--c1);
+}
+.hero__profiles svg {
+  width: 12px;
+  height: 12px;
+}
+.research-note {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  padding: 28px 28px 24px;
+  position: relative;
+}
+.research-note__heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--border-strong);
+}
+.research-note__number {
+  font: 12px var(--font-mono);
+  color: var(--muted);
+}
+.research-note h2 {
+  font-size: 33px;
+  line-height: 1.2;
+  margin: 24px 0 12px;
+  color: var(--c1);
+}
+.research-note > p {
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.75;
+}
+.memory-figure {
+  width: 100%;
+  height: 128px;
+  margin: 12px 0 0;
+  color: var(--c1);
+}
+.research-note__legend {
+  display: flex;
+  justify-content: space-around;
+  font: 12px var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  padding-bottom: 24px;
+}
+.research-note__footer {
+  border-top: 1px solid var(--border-strong);
+  padding-top: 19px;
+}
+.research-note__footer > span {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.research-note__footer strong {
+  font-size: 14px;
+  font-weight: 500;
+}
+.research-note__footer p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.hero__bottom {
+  border-top: 1px solid var(--border);
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.hero__bottom span,
+.hero__bottom a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero__bottom i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c1);
+}
+.hero__bottom svg {
+  width: 12px;
+}
+@media (max-width: 800px) {
+  .hero__grid {
+    gap: 35px;
+    grid-template-columns: 1.2fr 1fr;
+  }
+  .research-note {
+    padding: 20px;
+  }
+  .research-note h2 {
+    font-size: 26px;
+  }
+  .hero h1 {
+    font-size: 58px;
+  }
+}
+@media (max-width: 650px) {
+  .hero {
+    padding-top: 28px;
+  }
+  .hero__topline {
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-bottom: 30px;
+  }
+  .hero h1 {
+    font-size: 64px;
+  }
+  .hero__text {
+    max-width: none;
+  }
+  .research-note {
+    padding: 25px;
+  }
+  .research-note h2 {
+    font-size: 34px;
+  }
+  .memory-figure {
+    height: 120px;
+  }
+  .hero__bottom {
+    font-size: 13px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+.hero__bio {
+  min-width: 0;
+}
+@media (max-width: 650px) {
+  .hero h1 {
+    font-size: clamp(44px, 15vw, 64px);
+  }
+}

@@ -1,0 +1,50 @@
+.to-top {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--card-solid);
+  color: var(--text);
+  font-size: 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.to-top svg:not(.to-top__ring) {
+  position: relative;
+  z-index: 1;
+}
+
+.to-top__ring {
+  position: absolute;
+  inset: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  transform: rotate(-90deg);
+  fill: none;
+  stroke-width: 2;
+}
+
+.to-top__track {
+  stroke: var(--border);
+}
+
+.to-top__fill {
+  stroke: var(--c1);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.15s linear;
+}
+
+@media (max-width: 600px) {
+  .to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 46px;
+    height: 46px;
+  }
+}

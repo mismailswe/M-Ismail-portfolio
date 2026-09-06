@@ -1,0 +1,30 @@
+/* Shared section typography, used across the existing section components. */
+.sec-head {
+  margin-bottom: 30px;
+}
+.sec-head > .eyebrow {
+  margin-bottom: 12px;
+}
+.sec-head__line {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+}
+.sec-head__title {
+  font-size: clamp(29px, 3vw, 36px);
+}
+.sec-head__index {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+.sec-head__sub {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 650px;
+}
+.sec-head--center {
+  text-align: center;
+}

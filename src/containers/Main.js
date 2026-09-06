@@ -1,73 +1,35 @@
-import React, {Component} from "react";
-import Header from "../components/header/Header";
-import Greeting from "./greeting/Greeting";
-import Skills from "./skills/Skills";
-import StackProgress from "./skillProgress/skillProgress";
-import WorkExperience from "./workExperience/WorkExperience";
-import Projects from "./projects/Projects";
-import SoftwareProject from "./StartupProjects/SoftwareProject";
-import AiProjects from "./StartupProjects/AiProjects";
-import Achievement from "./achievement/Achievement";
-import Footer from "../components/footer/Footer";
-import Education from "./education/Education";
-import Top from "./topbutton/Top";
-import {StyleProvider} from "../contexts/StyleContext";
-import "./Main.scss";
-import Profile from "./profile/Profile";
+import React from "react";
+import {ThemeProvider} from "../contexts/ThemeContext";
+import Navbar from "../sections/Navbar";
+import Hero from "../sections/Hero";
+import About from "../sections/About";
+import Research from "../sections/Research";
+import Projects from "../sections/Projects";
+import Education from "../sections/Education";
+import Experience from "../sections/Experience";
+import Contact from "../sections/Contact";
+import Footer from "../sections/Footer";
+import {researchProjects} from "../portfolio";
 
-export default class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isDark: false
-    };
-  }
-
-  componentDidMount() {
-    if (localStorage.getItem("isDark") === null) {
-      const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
-      localStorage.setItem("isDark", darkPref.matches);
-    }
-    this.setState({isDark: JSON.parse(localStorage.getItem("isDark"))}, () => {
-      this.updateBodyTheme();
-    });
-  }
-
-  updateBodyTheme = () => {
-    const body = document.body;
-    // Remove existing theme classes
-    body.classList.remove("light-theme", "dark-theme");
-    // Add appropriate theme class
-    body.classList.add(this.state.isDark ? "dark-theme" : "light-theme");
-  };
-  changeTheme = () => {
-    this.setState({isDark: !this.state.isDark}, () => {
-      localStorage.setItem("isDark", this.state.isDark);
-      this.updateBodyTheme();
-    });
-  };
-
-  render() {
-    return (
-      <div className={this.state.isDark ? "dark-mode" : null}>
-        <StyleProvider
-          value={{isDark: this.state.isDark, changeTheme: this.changeTheme}}
-        >
-          <Header />
-          <Greeting />
-          <Skills />
-          <StackProgress />
+export default function Main() {
+  return (
+    <ThemeProvider>
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
+      <div className="app-shell">
+        <Navbar />
+        <main id="main-content" tabIndex="-1">
+          <Hero />
+          <About />
+          <Research />
+          <Projects data={researchProjects} id="work" index="03" />
           <Education />
-          <WorkExperience />
-          <Projects />
-          <SoftwareProject />
-          <AiProjects />
-          <Achievement />
-          <Profile />
-          <Footer />
-          <Top />
-        </StyleProvider>{" "}
+          <Experience />
+          <Contact />
+        </main>
+        <Footer />
       </div>
-    );
-  }
+    </ThemeProvider>
+  );
 }

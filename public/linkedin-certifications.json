@@ -1,0 +1,71 @@
+{
+  "profileUrl": "https://www.linkedin.com/in/muhammad-ismail-72681b177",
+  "fetchedAt": "2026-08-18",
+  "certifications": [
+    {
+      "id": "ai-foundations-ml",
+      "title": "Artificial Intelligence Foundations: Machine Learning",
+      "issuer": "LinkedIn",
+      "issuedDate": "2026-02",
+      "credentialUrl": "https://www.linkedin.com/learning/certificates/f2dfd55c24e68759ce6454e600289362f4d67c4ade03e87376b02137b39cff63",
+      "logoUrl": "https://logo.clearbit.com/linkedin.com"
+    },
+    {
+      "id": "data-literacy",
+      "title": "Data Literacy: Exploring and Describing Data",
+      "issuer": "LinkedIn",
+      "issuedDate": "2026-02",
+      "credentialUrl": "https://www.linkedin.com/learning/certificates/dab4ef46889dcf8a99e58fbfebdb317300793213cbc00f35bb7293d7fbce91ea",
+      "logoUrl": "https://logo.clearbit.com/linkedin.com"
+    },
+    {
+      "id": "data-science-foundations",
+      "title": "Data Science Foundations: Fundamentals",
+      "issuer": "LinkedIn",
+      "issuedDate": "2026-02",
+      "credentialUrl": "https://www.linkedin.com/learning/certificates/8d0b20fc5baad7fd20ca07a4a09e071a9f0fc884743d12df37ecb4538b8d7e3a",
+      "logoUrl": "https://logo.clearbit.com/linkedin.com"
+    },
+    {
+      "id": "ml-python-decision-trees",
+      "title": "Machine Learning with Python: Decision Trees",
+      "issuer": "LinkedIn",
+      "issuedDate": "2026-02",
+      "credentialUrl": "https://www.linkedin.com/learning/certificates/b9e276d516d81f440f8267bd3669a05a5d7184b03bea108317088c4e0e7ff29d",
+      "logoUrl": "https://logo.clearbit.com/linkedin.com"
+    },
+    {
+      "id": "ml-python-foundations",
+      "title": "Machine Learning with Python: Foundations",
+      "issuer": "LinkedIn",
+      "issuedDate": "2026-02",
+      "credentialUrl": "https://www.linkedin.com/learning/certificates/0440f32cccef0cbdd3fa770530c760972b87b586a3b08c7a46f126cf0ed97375",
+      "logoUrl": "https://logo.clearbit.com/linkedin.com"
+    },
+    {
+      "id": "statistics-foundations-1",
+      "title": "Statistics Foundations 1: The Basics",
+      "issuer": "LinkedIn",
+      "issuedDate": "2026-02",
+      "credentialUrl": "https://www.linkedin.com/learning/certificates/78541eaa0ba199bbb61833d67309a6ad6ed85bcc52edfd9326f4bbffc5dd832f",
+      "logoUrl": "https://logo.clearbit.com/linkedin.com"
+    },
+    {
+      "id": "statistics-foundations-2",
+      "title": "Statistics Foundations 2: Probability",
+      "issuer": "LinkedIn",
+      "issuedDate": "2026-02",
+      "credentialUrl": "https://www.linkedin.com/learning/certificates/4de10dd2fa42a053609e0d6d3b5aa7ab288d2e8fe8f3e483befd7f7eb5841b",
+      "logoUrl": "https://logo.clearbit.com/linkedin.com"
+    },
+    {
+      "id": "duolingo-english",
+      "title": "English Proficiency Certificate",
+      "issuer": "Duolingo English Test",
+      "issuedDate": "2026-01",
+      "expiresDate": "2027-07",
+      "credentialUrl": "https://www.linkedin.com/in/muhammad-ismail-72681b177/details/certifications/",
+      "logoUrl": "https://logo.clearbit.com/duolingo.com"
+    }
+  ]
+}

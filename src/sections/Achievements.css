@@ -1,0 +1,118 @@
+.ach__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.ach-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px 26px;
+}
+
+.ach-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.ach-card__logo {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 17px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.ach-card__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+}
+
+.ach-card__logo span {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--c2);
+}
+
+.ach-card__issuer {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+.ach-card__dates {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.ach__loading {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.ach__cta-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.ach__profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ach__profile svg:last-child {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.ach-card__badge {
+  font-size: 1.35rem;
+  color: var(--c2);
+  opacity: 0.85;
+}
+
+.ach-card__title {
+  font-size: 1.08rem;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.ach-card__desc {
+  font-size: 0.92rem;
+  line-height: 1.68;
+  color: var(--muted);
+}
+
+.ach-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.ach-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--c1);
+  transition: gap 0.3s var(--ease);
+}
+
+.ach-card__link:hover {
+  gap: 10px;
+}

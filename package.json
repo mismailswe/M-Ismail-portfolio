@@ -5,25 +5,16 @@
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "colorthief": "^2.3.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
+    "framer-motion": "^6.5.1",
     "gh-pages": "^2.2.0",
     "jest-canvas-mock": "^2.3.1",
-    "or": "^0.2.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-easy-emoji": "^1.3.0",
-    "react-emoji-render": "^2.0.1",
-    "react-headroom": "^3.0.0",
-    "react-lottie": "^1.2.3",
-    "react-responsive": "^10.0.0",
-    "react-reveal": "^1.2.2",
+    "react-icons": "^4.12.0",
     "react-scripts": "^5.0.1",
-    "react-test-renderer": "^17.0.2",
-    "react-twitter-embed": "3.0.3",
-    "sass": "^1.32.8"
+    "react-test-renderer": "^17.0.2"
   },
   "scripts": {
     "start": "node fetch.js && react-scripts start",

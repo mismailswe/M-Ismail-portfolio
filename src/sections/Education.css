@@ -1,0 +1,60 @@
+.background-grid {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 75px;
+}
+.background-grid .sec-head__line {
+  display: block;
+}
+.background-grid .sec-head__index {
+  display: block;
+  margin-top: 22px;
+}
+.academic-record {
+  padding: 0 0 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--border);
+}
+.academic-record:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border: 0;
+}
+.record__date {
+  font: 14px var(--font-mono);
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.academic-record h3 {
+  font-size: 25px;
+  line-height: 1.4;
+}
+.record__institution {
+  font-size: 16px;
+  color: var(--c1);
+  margin-top: 8px;
+}
+.academic-record > p:last-of-type {
+  font-size: 18px;
+  color: var(--text-2);
+  line-height: 1.9;
+  margin-top: 12px;
+}
+@media (max-width: 800px) {
+  .background-grid {
+    grid-template-columns: 210px 1fr;
+    gap: 30px;
+  }
+}
+@media (max-width: 650px) {
+  .background-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .background-grid .sec-head__line {
+    display: flex;
+  }
+  .background-grid .sec-head__index {
+    margin: 0;
+  }
+}

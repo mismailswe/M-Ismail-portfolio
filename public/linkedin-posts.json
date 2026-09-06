@@ -1,0 +1,46 @@
+{
+  "posts": [
+    {
+      "id": "hygram-paper",
+      "date": "2026-06-29",
+      "text": "I am excited to share my latest research paper titled \"When Does Graph-Structured Memory Help Multi-Session LLM Agents? An Empirical Study of HyGRAM.\"\n\nThis research addresses an important question: does incorporating a knowledge graph into an LLM agent enhance its memory retention during long conversations? After months of research and development, I built and evaluated HyGRAM, a hybrid graph-vector memory architecture, using GPT-4o-mini, Llama 3B, and Llama 7B on the LoCoMo benchmark.\n\nAll results are fully reproducible, with a one-click Colab notebook, comprehensive baselines, and complete results available under the MIT license.",
+      "url": "https://www.linkedin.com/posts/muhammad-ismail-72681b177_when-does-graph-structured-memory-help-multi-session-activity-7477453204197265408-AowP",
+      "reactions": 6,
+      "comments": 1,
+      "tags": ["LLM", "AgenticAI", "Research", "KnowledgeGraphs"]
+    },
+    {
+      "id": "nla-gpt2",
+      "date": "2026-06-20",
+      "text": "I recently rebuilt a research method from Anthropic called Natural Language Autoencoders (NLA). The original paper used huge, frontier-level AI models. I scaled it down to GPT-2 Small (124M parameters) and ran the whole thing on a free Google Colab GPU in just 25 minutes.\n\nThe most interesting discovery: one part of the system got stuck repeating the word \"feet\" over and over — yet it still managed to reconstruct the original signal with 96% accuracy. Everything is open and reproducible.",
+      "url": "https://www.linkedin.com/posts/muhammad-ismail-72681b177_github-mismailswenla-gpt2-reimplementation-activity-7473985445434060800-zDdZ",
+      "reactions": 3,
+      "tags": ["MechanisticInterpretability", "NLP", "AIResearch", "LLM"]
+    },
+    {
+      "id": "ai-systems",
+      "date": "2026-05-24",
+      "text": "Most people think AI products fail because of the model.\n\nIn reality, many AI projects fail because of weak context engineering, poor retrieval pipelines, bad prompt structure, no evaluation strategy, and unrealistic expectations from stakeholders.\n\nThe model is only one part of the system. A successful AI application is usually a combination of good data, retrieval quality, prompt design, backend engineering, monitoring & evaluation, and user experience.",
+      "url": "https://www.linkedin.com/posts/muhammad-ismail-72681b177_ai-machinelearning-llm-activity-7464353866575134720-Oqse",
+      "reactions": 3,
+      "tags": ["AI", "RAG", "SoftwareEngineering", "GenerativeAI"]
+    },
+    {
+      "id": "blockchain-ai-iot",
+      "date": "2025-05-18",
+      "text": "Published another research paper: \"Exploring Blockchain and AI Convergence to Secure IoT Data in Healthcare and Finance.\"\n\nIt highlights how AI and blockchain can work together to ensure secure, verified data transmission in critical sectors.",
+      "url": "https://www.linkedin.com/posts/muhammad-ismail-72681b177_exploring-the-potential-of-block-chain-and-activity-7329909753306939393-uzg1",
+      "reactions": 8,
+      "tags": ["Blockchain", "AI", "IoT", "Research"]
+    },
+    {
+      "id": "iot-healthcare",
+      "date": "2025-05-09",
+      "text": "Excited to share my recent publication! I've published a research paper titled \"Securing IoT Devices in Healthcare: Challenges and Solutions\" in the Scientific Engineering & Systems journal.\n\nThis work was part of my MS in Software Engineering and focuses on addressing key security challenges and proposing practical solutions for safeguarding IoT devices in the healthcare sector.",
+      "url": "https://www.linkedin.com/posts/muhammad-ismail-72681b177_view-of-securing-iot-devices-in-healthcare-activity-7326490665414975488-aBZl",
+      "reactions": 5,
+      "comments": 2,
+      "tags": ["IoT", "Healthcare", "Cybersecurity", "Research"]
+    }
+  ]
+}

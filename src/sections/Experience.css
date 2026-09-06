@@ -1,0 +1,19 @@
+.record__details {
+  margin-top: 16px;
+  font-size: 16px;
+  color: var(--text-2);
+}
+.record__details summary {
+  color: var(--c1);
+  font-size: 15px;
+  width: fit-content;
+  padding: 5px 0;
+}
+.record__details ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 12px;
+}
+.record__details li {
+  margin-bottom: 8px;
+}
